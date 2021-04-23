@@ -9,11 +9,6 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
-
-const imdbData = process.env.CLIENT_ID;
-
-
-
 mongoose
   .connect('mongodb://localhost/fivestars', {useNewUrlParser: true})
   .then(x => {
@@ -43,13 +38,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
-
-// default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
-
+// Connect Routes - Middleware
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const object = require("./routes/object");
+app.use("/", object);
 
 
 module.exports = app;

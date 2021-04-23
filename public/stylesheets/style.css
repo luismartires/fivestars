@@ -1,8 +1,87 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+.nav-item-box{
+  display: flex;
+  flex-direction: row;
+  width: 1350px;
+  display: flex;
+  justify-content: flex-end;
 }
+
+.index-section-box {
+  text-align: center;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 760px;
+}
+
+.main-div-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-div-input {
+padding: 10px 400px 10px 10px;
+border-radius: 2%;
+border: 1px solid lightgrey;
+outline: none;
+}
+
+.main-div-form-btn {
+  background-color: #FA6863;
+  color: white;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 10px;
+  border-radius: 1%;
+  border: 1px solid #FA6863;
+}
+
+.main-div-form-btn:hover {
+  cursor: pointer;
+  background-color: rgba(200,83,79);
+  outline: none;
+}
+
+.contacts {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.contacts div {
+  border: 1px solid red;
+}
+
+.contacts div h3 {
+  color: white;
+  font-size: 15px;
+}
+
+.contacts div img {
+height: 30px;
+}
+
+.companies {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+
+.companies div img {
+  height: 80px;
+  padding-left: 50px;
+}
+
