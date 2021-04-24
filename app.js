@@ -46,5 +46,14 @@ app.use('/', index);
 const object = require("./routes/object");
 app.use("/", object);
 
+const movies = require("./routes/movies");
+app.use("/", movies);
+
+const games = require("./routes/games");
+app.use("/", games);
+
+const series = require("./routes/series");
+app.use("/", series);
+
 
 module.exports = app;

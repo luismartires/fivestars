@@ -52,6 +52,15 @@ outline: none;
   outline: none;
 }
 
+.main-div {
+  display: flex;
+  justify-content: center;
+}
+
+.main-div div h2  {
+  padding: 10px;
+}
+
 .contacts {
   border: 1px solid green;
   display: flex;
