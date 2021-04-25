@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+
+
+/* NAVBAR */
+
+
+
+.navbar-logo img{
+  height: 50px;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: red;
+
+}
+
 .nav-item-box{
   display: flex;
   flex-direction: row;
@@ -12,17 +27,140 @@
   justify-content: flex-end;
 }
 
+
+
+/* HOME */
+
+
+
 .index-section-box {
   text-align: center;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 760px;
+  background-image: url("../images/background.jpg");
+  background-size: contain;
+}
+
+.index-section-title-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 1519px;
+  height: 760px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: Yanone Kaffeesatz;
+}
+
+.index-section-title {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  height: 450px;
+  flex-wrap: wrap;
+}
+
+.index-section-title-stars-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.index-section-title-stars-box img {
+  height: 30px;
+}
+
+.index-section-title-five-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ border: 2px solid black;
+ border-start-start-radius: 50px;
+ border-end-end-radius: 50px;
+ height: 330px;
+ padding: 20px;
+ background-color: rgba(250, 0, 0, 0.6);
+ 
+}
+
+.index-section-title-five {
+  text-align: center;
+  color: white;
+  font-size: 400px;
+  text-shadow: 1px 7px black;
+}
+
+.index-section-title-tars {
+  border: 1px solid black;
+  background-color: rgba(250, 250, 250, 0.6);
+  border-end-end-radius: 50px;
+  padding: 34px 30px 0 10px;
+  color: black;
+  font-size: 210px;
+  text-shadow: 1px 4px white;
+}
+
+.index-section-title-p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: rgba(245, 197, 24, 0.9);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.index-section-buttons-box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 790px;
+}
+
+.index-section-buttons {
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 30px;
+  transform: translateY(0);
+  transition: transform 1s;
+}
+
+.index-section-buttons:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: transform 1s;
+
+}
+
+.index-section-buttons a {
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.index-section-buttons a:hover {
+  color: red;
+}
+
+
+
+/* SEARCH GAMES/MOVIES/SERIES */ 
+
+.index-section-search-box {
+  
+  font-size: 100px;
+          -webkit-transform:
+            translateY(-5px)
+            translateX(240px)
+            rotate(-20deg); 
+        position: absolute;
+        color: rgba(245, 197, 24, 0.9);
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .main-div-form {
+  margin-top: 11px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,14 +174,14 @@ outline: none;
 }
 
 .main-div-form-btn {
-  background-color: #FA6863;
+  background-color: red;
   color: white;
   padding: 10px;
   font-weight: 700;
   font-size: 15px;
   margin-top: 10px;
   border-radius: 1%;
-  border: 1px solid #FA6863;
+  border: 1px solid red;
 }
 
 .main-div-form-btn:hover {
@@ -52,45 +190,76 @@ outline: none;
   outline: none;
 }
 
-.main-div {
-  display: flex;
-  justify-content: center;
-}
 
-.main-div div h2  {
-  padding: 10px;
+
+/* FOOTER */
+
+
+
+.footer-box {
+  border-top: 4px solid #222222;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-around;
 }
 
 .contacts {
-  border: 1px solid green;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-bottom: 50px;
+  margin: 40px 0;
 }
 
-.contacts div {
-  border: 1px solid red;
+.contacts-name-links-box {
+  border-right: 1px solid #222222;
+  border-left: 1px solid #222222;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }
 
-.contacts div h3 {
-  color: white;
-  font-size: 15px;
+.contacts-name-links-box div h3 {
+  font-size: 20px;
+  color: #222222;
+  font-family: Yanone Kaffeesatz;
 }
 
-.contacts div img {
+.contacts-links-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 120px;
+}
+
+.contacts-links-box div {
+  padding: 5px;
+  height: 45px;
+  width: 45px;
+}
+
+.contacts-links-box div:hover {
+  border: 1px solid #222222;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #222222;
+  height: 45px;
+  width: 45px;
+}
+
+.contacts-links-box img {
 height: 30px;
 }
 
 .companies {
-  border: 1px solid blue;
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 50px;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .companies div img {
-  height: 80px;
-  padding-left: 50px;
+  height: 100px;
 }
-
