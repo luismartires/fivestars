@@ -15,11 +15,13 @@
   border: 1px solid black;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: red;
-
+  background-color: black;
+  padding: 1px;
 }
 
 .nav-item-box{
+  font-size: 25px;
+  font-family: Yanone Kaffeesatz;
   display: flex;
   flex-direction: row;
   width: 1350px;
@@ -120,6 +122,8 @@
 
 .index-section-buttons {
   border: 1px solid black;
+  border-start-start-radius: 25px;
+  border-end-end-radius: 25px;
   background-color: white;
   padding: 10px 30px;
   transform: translateY(0);
@@ -146,6 +150,8 @@
 
 
 /* SEARCH GAMES/MOVIES/SERIES */ 
+
+
 
 .index-section-search-box {
   
@@ -263,3 +269,33 @@ height: 30px;
 .companies div img {
   height: 100px;
 }
+
+
+
+/* SETTINGS */
+
+
+
+.settings-div-form-box {
+  background-color: white;
+  width: 1000px;
+  height: 700px;
+  border-radius: 20px;
+}
+
+.settings-div-form {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  align-items: center;
+}
+
+.settings-div-form-list {
+  border: 1px solid blue;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
