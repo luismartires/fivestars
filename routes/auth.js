@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-/* const User = require("../models/User.model"); */
+const User = require("../models/User.model");
 const bcrypt = require("bcryptjs");
 
 router.get("/login", (req, res) => {
@@ -48,17 +48,17 @@ router.post("/signup", async (req, res) => {
   let user = await User.findOne({ username: username });
   if (user !== null) {
     res.render("auth/signup", { errorMessage: "username already exists" });
-    return; //return é para sair da função e assumir o erro
+    return;
   }
   user = await User.findOne({ email: email });
   if (user !== null) {
     res.render("auth/signup", { errorMessage: "email already exists" });
     return;
   }
-  //Create the user in the database
-  saltRounds = 10; //encription of encription of encription... 10 times
+
+  saltRounds = 10;
   const salt = bcrypt.genSaltSync(saltRounds);
-  const hashedPassword = bcrypt.hashSync(password, salt); //hashed password is the pass that users write when registered on the app
+  const hashedPassword = bcrypt.hashSync(password, salt);
   await User.create({
     username,
     email,
