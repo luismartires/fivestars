@@ -1,36 +1,28 @@
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 
-/* GET home page */
-router.get('/', async (req, res) => {
-res.render("index");
-});
-
-/* function requireLogin(req, res, next) {
+function requireLogin(req, res, next) {
   if (req.session.currentUser) {
     next();
   } else {
     res.redirect("/login");
   }
-} */
+}
 
-/* router.get('/', (req, res, next) => {
-  res.render('index', { user: req.session.currentUser } );
+router.get("/", (req, res, next) => {
+  res.render("index", { user: req.session.currentUser });
 });
 
-router.get("/private", requireLogin, (req, res) => {
-  res.render("private");
-}); */
-
-router.get("/my-area", async (req, res) => {
-  res.render("auth/my-area");
+router.get("/favorites", requireLogin, (req, res) => {
+  res.render("favorites", { user: req.session.currentUser });
 });
 
-router.get("/settings", async (req, res) => {
-  res.render("auth/settings");
+router.get("/my-area", requireLogin, (req, res) => {
+  res.render("auth/my-area", { user: req.session.currentUser });
 });
 
-
+router.get("/settings", requireLogin, (req, res) => {
+  res.render("auth/settings", { user: req.session.currentUser });
+});
 
 module.exports = router;
-

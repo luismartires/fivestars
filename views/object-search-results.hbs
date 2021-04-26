@@ -1,13 +1,12 @@
-<h1>connected</h1>
-{{theObjectName}}
-<ul>
-
+<h1>{{theObjectName}}</h1>
+<div class="container">
   {{#each objects}}
-
-  <img src="{{poster}}" alt="">
-  <li>Title: {{title}}</li>
-  <li>Year: {{year}}</li>
-  <li>{{type}}</li>
-
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{poster}}" alt="poster img">
+      <h2>{{title}}</h2>
+      <h2>{{type}}</h2>
+    </div>
+  </div>
   {{/each}}
-</ul>
+</div>
