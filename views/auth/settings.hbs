@@ -9,20 +9,30 @@
           <div class="settings-div-form-list">
             <form action="/authors/create" method="POST">
 
-              <input type="file" name="image" />
+              <div class="settings-form-image-box">
+                <div class="settings-form-image"></div>
+                <input class="settings-form-image-button" type="file" name="image" />
+              </div>
 
-              <label>Username</label>
-              <input type="text" name="name">
+              <div>
+                <div class="settings-form-account">
+                  <label>Username</label>
+                  <input type="text" name="name">
 
-              <label>Password</label>
-              <input type="text" name="bio">
+                  <label>Password</label>
+                  <input type="password" name="bio">
 
-              <label>Re-Type Password</label>
-              <input type="text" name="bio">
-              <button type="submit">Edit</button>
+                  <label>Re-Type Password</label>
+                  <input type="password" name="bio">
+                </div>
+
+
+                <button class="settings-form-button" type="submit">Edit</button>
+              </div>
             </form>
-          </div>
 
+          </div>
+        </form>
 
       </div>
     </div>

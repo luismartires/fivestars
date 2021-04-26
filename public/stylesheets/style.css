@@ -11,20 +11,21 @@
 
 
 .navbar-logo img{
-  height: 50px;
-  border: 1px solid black;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  height: 5rem;
+  border: 0.1rem solid black;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   background-color: black;
-  padding: 1px;
+  padding: 0.1rem;
 }
 
 .nav-item-box{
-  font-size: 25px;
+  border: 1px solid red;
+  font-size: 2.5rem;
   font-family: Yanone Kaffeesatz;
   display: flex;
   flex-direction: row;
-  width: 1350px;
+  width: 135rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -41,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 760px;
+  height: 76rem;
   background-image: url("../images/background.jpg");
   background-size: contain;
 }
@@ -51,8 +52,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 1519px;
-  height: 760px;
+  width: 155rem;
+  height: 76rem;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: Yanone Kaffeesatz;
 }
@@ -62,7 +63,7 @@
   flex-direction: column;
   align-content: space-around;
   justify-content: space-around;
-  height: 450px;
+  height: 45rem;
   flex-wrap: wrap;
 }
 
@@ -73,7 +74,7 @@
 }
 
 .index-section-title-stars-box img {
-  height: 30px;
+  height: 3rem;
 }
 
 .index-section-title-five-box {
@@ -81,11 +82,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
- border: 2px solid black;
- border-start-start-radius: 50px;
- border-end-end-radius: 50px;
- height: 330px;
- padding: 20px;
+ border: 0.2rem solid black;
+ border-start-start-radius: 5rem;
+ border-end-end-radius: 5rem;
+ height: 33rem;
+ padding: 2rem;
  background-color: rgba(250, 0, 0, 0.6);
  
 }
@@ -93,23 +94,23 @@
 .index-section-title-five {
   text-align: center;
   color: white;
-  font-size: 400px;
-  text-shadow: 1px 7px black;
+  font-size: 40rem;
+  text-shadow: 0.1rem 0.7rem black;
 }
 
 .index-section-title-tars {
-  border: 1px solid black;
+  border: 0.1rem solid black;
   background-color: rgba(250, 250, 250, 0.6);
-  border-end-end-radius: 50px;
-  padding: 34px 30px 0 10px;
+  border-end-end-radius: 5rem;
+  padding: 3.9rem 3rem 0 1rem;
   color: black;
-  font-size: 210px;
-  text-shadow: 1px 4px white;
+  font-size: 21rem;
+  text-shadow: 0.1rem 0.4rem white;
 }
 
 .index-section-title-p {
-  margin-top: 20px;
-  font-size: 20px;
+  margin-top: 2rem;
+  font-size: 2rem;
   color: rgba(245, 197, 24, 0.9);
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
@@ -117,15 +118,15 @@
 .index-section-buttons-box {
   display: flex;
   justify-content: space-evenly;
-  width: 790px;
+  width: 79rem;
 }
 
 .index-section-buttons {
-  border: 1px solid black;
-  border-start-start-radius: 25px;
-  border-end-end-radius: 25px;
+  border: 0.1rem solid black;
+  border-start-start-radius: 2.5rem;
+  border-end-end-radius: 2.5rem;
   background-color: white;
-  padding: 10px 30px;
+  padding: 1rem 3rem;
   transform: translateY(0);
   transition: transform 1s;
 }
@@ -140,7 +141,7 @@
 .index-section-buttons a {
   color: black;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 .index-section-buttons a:hover {
@@ -154,11 +155,11 @@
 
 
 .index-section-search-box {
-  
-  font-size: 100px;
+  text-transform: uppercase;
+  font-size: 10rem;
           -webkit-transform:
             translateY(-5px)
-            translateX(240px)
+            translateX(24rem)
             rotate(-20deg); 
         position: absolute;
         color: rgba(245, 197, 24, 0.9);
@@ -166,26 +167,26 @@
 }
 
 .main-div-form {
-  margin-top: 11px;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .main-div-input {
-padding: 10px 400px 10px 10px;
+padding: 1rem 40rem 1rem 1rem;
 border-radius: 2%;
-border: 1px solid lightgrey;
+border: 0.1rem solid lightgrey;
 outline: none;
 }
 
 .main-div-form-btn {
   background-color: red;
   color: white;
-  padding: 10px;
+  padding: 1rem;
   font-weight: 700;
-  font-size: 15px;
-  margin-top: 10px;
+  font-size: 1.5rem;
+  margin-top: 1rem;
   border-radius: 1%;
   border: 1px solid red;
 }
@@ -198,12 +199,15 @@ outline: none;
 
 
 
+/* SEARCH-RESULTS GAMES/MOVIES/SERIES */
+
+
 /* FOOTER */
 
 
 
 .footer-box {
-  border-top: 4px solid #222222;
+  border-top: 0.4rem solid #222222;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -216,20 +220,20 @@ outline: none;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 40px 0;
+  margin: 4rem 0;
 }
 
 .contacts-name-links-box {
-  border-right: 1px solid #222222;
-  border-left: 1px solid #222222;
-  padding: 0 50px;
+  border-right: 0.1rem solid #222222;
+  border-left: 0.1rem solid #222222;
+  padding: 0 5rem;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 20rem;
 }
 
 .contacts-name-links-box div h3 {
-  font-size: 20px;
+  font-size: 2rem;
   color: #222222;
   font-family: Yanone Kaffeesatz;
 }
@@ -238,36 +242,36 @@ outline: none;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 120px;
+  width: 12rem;
 }
 
 .contacts-links-box div {
-  padding: 5px;
-  height: 45px;
-  width: 45px;
+  padding: 0.5rem;
+  height: 4.5rem;
+  width: 4.5rem;
 }
 
 .contacts-links-box div:hover {
-  border: 1px solid #222222;
-  padding: 5px;
+  border: 0.1rem solid #222222;
+  padding: 0.5rem;
   border-radius: 20px;
   background-color: #222222;
-  height: 45px;
-  width: 45px;
+  height: 4.5rem;
+  width: 4.5rem;
 }
 
 .contacts-links-box img {
-height: 30px;
+height: 3rem;
 }
 
 .companies {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 }
 
 .companies div img {
-  height: 100px;
+  height: 10rem;
 }
 
 
@@ -278,24 +282,113 @@ height: 30px;
 
 .settings-div-form-box {
   background-color: white;
-  width: 1000px;
-  height: 700px;
-  border-radius: 20px;
+  width: 80rem;
+  height: 50rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.myarea-div-form-box {
+  background-color: white;
+  width: 50rem;
+  height: 70rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
 }
 
 .settings-div-form {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: 70rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .settings-div-form-list {
-  border: 1px solid blue;
-  width: 500px;
-  height: 300px;
+  border: 0.1rem solid black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
+.settings-form-image-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 1.5rem;
+  border-right: 0.1rem solid black;
+}
+
+.settings-form-image {
+  border: 0.1rem solid black;
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 2rem;
+}
+
+.settings-form-image-button {
+  font-size: 1.2rem;
+}
+
+.settings-form-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 34rem;
+  margin-bottom: 2.5rem;
+}
+
+.settings-form-account input {
+  width: 20rem;
+}
+
+.settings-form-account label {
+  padding: 1rem;
+}
+
+.settings-form-button {
+  padding: 0.5rem 2rem;
+}
+
+
+
+/* MY-AREA */
+
+
+
+.myarea-form-name {
+  font-size: 3.5rem;
+}
+
+.myarea-div-form-list {
+  border: 0.1rem solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+  height: 60rem;
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+
+.myarea-form-image-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+}
+
+.myarea-form-image {
+  border: 0.1rem solid black;
+  width: 20rem;
+  height: 20rem;
+}
