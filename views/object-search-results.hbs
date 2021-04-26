@@ -3,11 +3,18 @@
 <ul>
 
   {{#each objects}}
-
+<h3>
+    <a href="/movie-details/{{title}}">
+       {{title}}
+    </a>
+</h3>
   <img src="{{poster}}" alt="">
-  <li>Title: {{title}}</li>
   <li>Year: {{year}}</li>
   <li>{{type}}</li>
 
   {{/each}}
 </ul>
+
+
+
+
