@@ -5,16 +5,14 @@
     <div class="col-md-4">
       <img src="{{poster}}" alt="poster img">
       <h2>{{title}}</h2>
-      <h2>{{type}}</h2>
     </div>
-    <a href="/movie-details/{{imdbid}}">See details</a>
-    <form action="/favorites/{{imdbid}}" method="POST">
-      <button type="submit">Add to fav.</button>
-    </form>
+    <a href="/details/{{imdbid}}">See details</a>
+
+    <a href="/review/{{imdbid}}">+</a>
+
+    {{!-- <form action="/review/{{imdbid}}" method="POST">
+      <button type="submit">Add Review</button>
+    </form> --}}
   </div>
   {{/each}}
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> 297eb52154a61ad60e92737ff81543528c3736b3

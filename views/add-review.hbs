@@ -1,0 +1,17 @@
+<h1>{{object.title}}</h1>
+<hr>
+<p>Year: {{object.year}}</p>
+<img src="{{object.poster }}" alt="{{object.title}}" />
+
+
+
+
+<form action="/details/{{object.imdbid}}/rating" method="POST">
+  <label>Rating</label>
+  <input type="number" name="rating" min="1" max="5" />
+  <button type="submit">+</button>
+</form>
+
+<form action="/favorites/{{object.imdbid}}" method="POST">
+  <button type="submit">Add Fav</button>
+</form>

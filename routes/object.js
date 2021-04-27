@@ -7,6 +7,12 @@ const Favorite = require("../models/Favorite.model");
 
 const imdb = require("imdb-api");
 
+
+
+/* OBJECT-SEARCH */
+
+
+
 router.get("/object-search", async (req, res) => {
   const { theObjectName } = req.query;
 
@@ -20,10 +26,16 @@ router.get("/object-search", async (req, res) => {
   );
   let objects = result.results;
 
-  res.render("object-search-results", { objects, theObjectName });
+  res.render("object-search-results", { objects, theObjectName, user: req.session.currentUser});
 });
 
-router.post("/movie-details/:id/rating", requireLogin, async (req, res) => {
+
+
+/* DETAILS */
+
+
+
+router.post("/details/:id/rating", requireLogin, async (req, res) => {
   try {
     const objectId = req.params.id;
     const user = req.session.currentUser._id;
@@ -34,14 +46,14 @@ router.post("/movie-details/:id/rating", requireLogin, async (req, res) => {
       rating,
       user,
     });
-    res.redirect(`/movie-details/${objectId}`);
+    res.redirect(`/review/${objectId}`);
   } catch (e) {
     res.render("error");
     console.log(`An error occured ${e}`);
   }
 });
 
-router.get("/movie-details/:id", async (req, res) => {
+router.get("/details/:id", async (req, res) => {
   const result = await imdb.get(
     {
       id: req.params.id,
@@ -50,13 +62,21 @@ router.get("/movie-details/:id", async (req, res) => {
       apiKey: process.env.CLIENT_ID,
     }
   );
-  const movie = result;
-  console.log("in", movie);
-  res.render("movies-details", { movie });
+  const object = result;
+  console.log("in", object);
+  res.render("object-details", { object, user: req.session.currentUser });
 });
 
-router.get("/favorites", (req, res) => {
-  res.render("auth/favorites");
+
+
+/* FAVORITES */
+
+
+
+router.get("/favorites", async (req, res) => {
+  const favorites = await Favorite.find({user: req.session.currentUser._id});
+  const ratings = await Rating.find({user: req.session.currentUser._id});
+  res.render("favorites", { favorites, ratings, user:  req.session.currentUser });
 });
 
 router.post("/favorites/:id", async (req, res) => {
@@ -71,7 +91,7 @@ router.post("/favorites/:id", async (req, res) => {
       }
     );
     const item = result;
-    console.log(result);
+    console.log(item);
     const user = req.session.currentUser._id;
     await Favorite.create({
       objectId,
@@ -79,11 +99,31 @@ router.post("/favorites/:id", async (req, res) => {
       poster: result.poster,
       user,
     });
-    res.redirect(`/movie-details/${objectId}`);
+    res.redirect(`/details/${objectId}`);
   } catch (e) {
     res.render("error");
     console.log(`An error occured ${e}`);
   }
+});
+
+
+
+/* ADD-REVIEW */
+
+
+
+router.get("/review/:id", async (req, res) => {
+  const result = await imdb.get(
+    {
+      id: req.params.id,
+    },
+    {
+      apiKey: process.env.CLIENT_ID,
+    }
+  );
+  const object = result;
+  console.log("in", object);
+  res.render("add-review", { object, user: req.session.currentUser });
 });
 
 module.exports = router;

@@ -3,7 +3,7 @@ const router = express.Router();
 const imdb = require("imdb-api");
 
 router.get("/movies", async (req, res) => {
-  res.render("movies");
+  res.render("movies", {user: req.session.currentUser});
 });
 
 router.get("/search-movie", async (req, res) => {
@@ -23,7 +23,7 @@ router.get("/search-movie", async (req, res) => {
   });
   console.log(filteredArr);
 
-  res.render("object-search-results", { objects: filteredArr, theObjectName });
+  res.render("object-search-results", { objects: filteredArr, theObjectName, user: req.session.currentUser});
 });
 
 module.exports = router;
