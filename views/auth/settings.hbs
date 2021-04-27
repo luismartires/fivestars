@@ -3,38 +3,39 @@
     <div class="index-section-title-box">
       <div class="settings-div-form-box">
 
-        <form class="settings-div-form" action="" method="GET">
-          <h2>"{NAME}"</h2>
+        <form class="settings-div-form" action="/my-area" method="POST" enctype="multipart/form-data">
+          <h2>{{user.username}}</h2>
 
           <div class="settings-div-form-list">
-            <form action="/authors/create" method="POST">
 
-              <div class="settings-form-image-box">
-                <div class="settings-form-image"></div>
-                <input class="settings-form-image-button" type="file" name="image" />
+            <div class="settings-form-image-box">
+              <div class="settings-form-image">
+                <img class="myarea-image" src="{{user.imageUrl}}" alt="" />
+              </div>
+              <input class="settings-form-image-button" type="file" name="image" />
+            </div>
+
+            <div>
+              <div class="settings-form-account">
+                <label>Username</label>
+                <input type="text" name="name" value="{{user.username}}">
+
+                <label>Password</label>
+                <input type="password" name="password">
+
+                <label>Re-Type Password</label>
+                <input type="password" name="password">
               </div>
 
-              <div>
-                <div class="settings-form-account">
-                  <label>Username</label>
-                  <input type="text" name="name">
 
-                  <label>Password</label>
-                  <input type="password" name="bio">
-
-                  <label>Re-Type Password</label>
-                  <input type="password" name="bio">
-                </div>
-
-
-                <button class="settings-form-button" type="submit">Edit</button>
-              </div>
-            </form>
-
-          </div>
+              <button class="settings-form-button" type="submit">Edit</button>
+            </div>
         </form>
 
       </div>
+      </form>
+
+    </div>
     </div>
   </section>
 </body>

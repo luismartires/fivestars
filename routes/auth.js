@@ -63,7 +63,7 @@ router.post("/signup", async (req, res) => {
   await User.create({
     username,
     email,
-    password: hashedPassword,
+    password: hashedPassword
   });
   res.redirect("/");
 });
