@@ -2,10 +2,8 @@
 <hr>
 <p>Year: {{movie.year}}</p>
 <img src="{{movie.poster }}" alt="{{movie.title}}" />
-<form action="/movie-details/:movieName/rating" method="POST" enctype="multipart/form-data">
+<form action="/movie-details/{{movie.imdbid}}/rating" method="POST">
   <label>Rating</label>
   <input type="number" name="rating" min="1" max="5" />
   <button type="submit">Submit</button>
-
-
 </form>
