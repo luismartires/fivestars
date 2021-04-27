@@ -7,6 +7,14 @@
       <h2>{{title}}</h2>
       <h2>{{type}}</h2>
     </div>
+    <a href="/movie-details/{{imdbid}}">See details</a>
+    <form action="/favorites/{{imdbid}}" method="POST">
+      <button type="submit">Add to fav.</button>
+    </form>
   </div>
   {{/each}}
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 297eb52154a61ad60e92737ff81543528c3736b3
