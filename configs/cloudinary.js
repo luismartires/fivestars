@@ -11,7 +11,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "movies",
+    folder: "index",
     allowed_formats: ["jpg", "png"],
   },
   filename: function (req, file, cb) {
@@ -19,5 +19,5 @@ const storage = new CloudinaryStorage({
   },
 });
 
-const uploadCLoud = multer({ storage });
-module.exports = uploadCLoud;
+const uploadCloud = multer({ storage });
+module.exports = uploadCloud;

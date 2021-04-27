@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-const ratingSchema = new Schema({
+const favoriteSchema = new Schema({
   objectId: String,
-  rating: { type: Number, min: 1, max: 5 },
+  title: String,
+  poster: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
 });
 
-module.exports = model("Rating", ratingSchema);
+module.exports = model("Favorite", favoriteSchema);

@@ -14,7 +14,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  imageUrl: {
+    type: String,
+    default: ''
+  }
  /*  role: String, //Admin, Reader, Writer, Super */
+}, {
+  timestamps: true
 });
+
 
 module.exports = model("User", userSchema);

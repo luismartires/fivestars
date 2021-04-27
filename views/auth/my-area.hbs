@@ -10,15 +10,16 @@
 
 
             <div class="myarea-form-image-box">
-              <div class="myarea-form-image"></div>
+              <div class="myarea-form-image">
+                <img class="myarea-image" src="{{user.imageUrl}}" alt="" />
+              </div>
             </div>
 
             <div>
               <div class="myarea-form-name">
-                <label>"{NAME}"</label>
+                <label>{{user.username}}</label>
               </div>
             </div>
-
             <div>
               <label for="
               ">Date of Birth <br> "{DateOfBirth}"</label>
@@ -27,7 +28,7 @@
             <div>
               <label for="">Interests</label> <br>
 
-              <input class="test" type="text" value="add,your,interests" data-role="tagsinput"></input>
+              <input type="text" value="add,your,interests" data-role="tagsinput"></input>
 
           </form>
         </div>

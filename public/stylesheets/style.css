@@ -8,7 +8,9 @@
 
 /* NAVBAR */
 
-
+.nav-box {
+  border: 1px solid blue;
+}
 
 .navbar-logo img{
   height: 5rem;
@@ -27,7 +29,7 @@
   flex-direction: row;
   width: 135rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 
@@ -391,4 +393,9 @@ height: 3rem;
   border: 0.1rem solid black;
   width: 20rem;
   height: 20rem;
+}
+
+.myarea-image {
+  height: 200px;
+  width: 200px;
 }
