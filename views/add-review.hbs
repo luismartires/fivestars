@@ -2,10 +2,6 @@
 <hr>
 <p>Year: {{object.year}}</p>
 <img src="{{object.poster }}" alt="{{object.title}}" />
-
-
-
-
 <form action="/details/{{object.imdbid}}/rating" method="POST">
   <label>Rating</label>
   <input type="number" name="rating" min="1" max="5" />
