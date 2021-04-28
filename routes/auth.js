@@ -35,7 +35,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, city= "-", imageUrl="https://res.cloudinary.com/dipcaihd5/image/upload/v1619625208/index/defaultuser_ywbnff.jpg", interests } = req.body;
   if (username === "" || password === "") {
     res.render("auth/signup", {
       errorMessage: "Indicate username and password",
@@ -63,7 +63,10 @@ router.post("/signup", async (req, res) => {
   await User.create({
     username,
     email,
-    password: hashedPassword
+    password: hashedPassword,
+    city,
+    imageUrl,
+    interests
   });
   res.redirect("/");
 });

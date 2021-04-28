@@ -115,7 +115,6 @@ border-radius: 5rem;
  height: 33rem;
  padding: 2rem;
  background-color: rgba(250, 0, 0, 0.6);
- 
 }
 
 .index-section-title-five {
@@ -125,14 +124,19 @@ border-radius: 5rem;
   text-shadow: 0.1rem 0.7rem black;
 }
 
+.index-section-title-tars-box {
+  transform-origin: top left;
+  transform: skew(-15deg);
+}
+
 .index-section-title-tars {
   border: 0.1rem solid black;
-  background-color: rgba(250, 250, 250, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   border-end-end-radius: 5rem;
-  padding: 3.9rem 3rem 0 1rem;
-  color: black;
+  padding: 3.9rem 4rem 0 4rem;
+  color: white;
   font-size: 21rem;
-  text-shadow: 0.1rem 0.4rem white;
+  text-shadow: 0.1rem 0.7rem black;
 }
 
 .index-section-title-p {
@@ -162,7 +166,6 @@ border-radius: 5rem;
   cursor: pointer;
   transform: translateY(-10px);
   transition: transform 1s;
-
 }
 
 .index-section-buttons a {
@@ -181,7 +184,7 @@ border-radius: 5rem;
 
 
 
-.index-section-search-box {
+/* .index-section-search-box {
   text-transform: uppercase;
   font-size: 10rem;
           -webkit-transform:
@@ -191,7 +194,7 @@ border-radius: 5rem;
         position: absolute;
         color: rgba(245, 197, 24, 0.9);
         text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-}
+} */
 
 .main-div-form {
   margin-top: 1rem;
@@ -491,7 +494,7 @@ font-size: 6rem;
 color: white;
 background-color: red;
 padding: 0 3rem;
-transform: skewX(-15deg);
+c
 margin-bottom: 4rem;
 }
 
