@@ -8,28 +8,53 @@
 
 /* NAVBAR */
 
-.nav-box {
-  border: 1px solid blue;
+
+
+.navbar-logo-img{
+  height: 4rem;
+  padding-bottom: 0.7rem;
+  padding-right: 2rem;
 }
 
-.navbar-logo img{
-  height: 5rem;
-  border: 0.1rem solid black;
-  border-top-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  background-color: black;
-  padding: 0.1rem;
+.nav-item-box-home {
+  font-size: 2.5rem;
+  font-family: Yanone Kaffeesatz;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .nav-item-box{
-  border: 1px solid red;
   font-size: 2.5rem;
   font-family: Yanone Kaffeesatz;
   display: flex;
   flex-direction: row;
   width: 135rem;
-  display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-image-box {
+height: 5rem;
+width: 5rem;
+border-radius: 5rem;
+}
+
+.nav-link {
+  text-decoration: none!important;
+}
+
+.navbar-box {
+ border-bottom: 0.4rem solid #222222;
+}
+
+.navbar {
+  margin-bottom: 0!important;
+}
+
+.dropdown-toggle {
+  margin-right: 5rem;
+  margin-left: 2rem;
 }
 
 
@@ -54,7 +79,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 155rem;
+  width: 151.9rem;
   height: 76rem;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: Yanone Kaffeesatz;
@@ -189,7 +214,6 @@ outline: none;
   font-weight: 700;
   font-size: 1.5rem;
   margin-top: 1rem;
-  border-radius: 1%;
   border: 1px solid red;
 }
 
@@ -282,6 +306,18 @@ height: 3rem;
 
 
 
+.settings-div-h2-box h2{
+  font-weight: 700;
+  font-size: 4rem;
+  color: white;
+  background-color: red;
+  padding: 0.5rem 3rem;
+  transform: skewX(-15deg);
+  margin-bottom: 4rem;
+  border-start-start-radius: 2rem;
+  border-end-end-radius: 2rem;  
+}
+
 .settings-div-form-box {
   background-color: white;
   width: 80rem;
@@ -290,8 +326,90 @@ height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
+  border: 0.2rem solid black;
 }
+
+.settings-div-form {
+  display: flex;
+  flex-direction: column;
+  height: 70rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-div-form-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80rem;
+}
+
+.settings-form-image-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 1.5rem;
+  height: 40rem;
+  margin: 0 3rem;
+}
+
+.settings-form-image {  
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 3rem;
+}
+
+.settings-form-image-button {
+  font-size: 1.2rem;
+}
+
+.settings-form-account {
+  padding-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35rem;
+  border-left: 0.2rem solid black;
+  height: 40rem;
+}
+
+.settings-form-account input {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  width: 30rem;
+  padding: 0.5rem 0;
+border: 0.1rem solid lightgrey;
+outline: none;
+}
+
+.settings-form-account label {
+  padding: 1rem;
+  font-size: 4rem;
+}
+
+.settings-form-button {
+  margin: 2rem;
+  padding: 0.5rem 2rem;
+  border: 0.1rem solid red;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: red;
+  color: white;
+}
+
+.settings-form-button:hover {
+  cursor: pointer;
+  background-color: rgba(200,83,79);
+  outline: none;
+}
+
+
+
+/* MY-AREA */
+
+
 
 .myarea-div-form-box {
   background-color: white;
@@ -301,84 +419,28 @@ height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
-}
-
-.settings-div-form {
-  display: flex;
-  flex-direction: column;
-  height: 70rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.settings-div-form-list {
-  border: 0.1rem solid black;
-  display: flex;
-  flex-direction: row;
-}
-
-.settings-form-image-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.2rem 1.5rem;
-  border-right: 0.1rem solid black;
-}
-
-.settings-form-image {
-  border: 0.1rem solid black;
-  width: 20rem;
-  height: 20rem;
-  margin-bottom: 2rem;
-}
-
-.settings-form-image-button {
-  font-size: 1.2rem;
-}
-
-.settings-form-account {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 34rem;
-  margin-bottom: 2.5rem;
-}
-
-.settings-form-account input {
-  width: 20rem;
-}
-
-.settings-form-account label {
-  padding: 1rem;
-}
-
-.settings-form-button {
-  padding: 0.5rem 2rem;
-}
-
-
-
-/* MY-AREA */
-
-
-
-.myarea-form-name {
-  font-size: 3.5rem;
+  border: 0.2rem solid black;
 }
 
 .myarea-div-form-list {
-  border: 0.1rem solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40rem;
-  height: 60rem;
+  height: 70rem;
   font-size: 2.5rem;
   padding: 1rem;
+}
+
+.myarea-form-name label{
+  border-start-start-radius: 2rem;
+  border-end-end-radius: 2rem;
+  font-weight: 700;
+  font-size: 4rem;
+  color: white;
+  background-color: red;
+  padding: 0 3rem;
+  transform: skewX(-15deg);
 }
 
 .myarea-form-image-box {
@@ -389,13 +451,106 @@ height: 3rem;
   padding: 2rem 1.5rem;
 }
 
-.myarea-form-image {
-  border: 0.1rem solid black;
-  width: 20rem;
-  height: 20rem;
-}
-
 .myarea-image {
   height: 200px;
   width: 200px;
+}
+
+.myarea-form-details label {
+padding: 1rem;
+font-size: 4rem;
+}
+
+.myarea-form-name-box {
+  border-bottom: 0.2rem solid black;
+  width: 40rem;
+  padding-bottom: 2.5rem;
+}
+
+.myarea-form-details button {
+  margin: 2rem;
+  padding: 0.5rem 2rem;
+  border: 0.1rem solid red;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: red;
+  color: white;
+}
+
+
+
+/* LOGIN / SIGNUP */
+
+
+
+.login-form-title {
+  border-start-start-radius: 2rem;
+  border-end-end-radius: 2rem;
+font-weight: 700;
+font-size: 6rem;
+color: white;
+background-color: red;
+padding: 0 3rem;
+transform: skewX(-15deg);
+margin-bottom: 4rem;
+}
+
+.login-div-form-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 45rem;
+  height: 50rem;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid black;
+}
+
+.signup-div-form-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 55rem;
+  height: 60rem;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  border: 0.2rem solid black;
+}
+
+.login-form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-button {
+margin: 2rem;
+padding: 0.5rem 2rem;
+border: 0.1rem solid red;
+font-weight: 700;
+font-size: 1.5rem;
+background-color: red;
+color: white;
+}
+
+.login-form-button:hover {
+  cursor: pointer;
+  background-color: rgba(200,83,79);
+  outline: none;
+}
+
+.login-form-box label {
+  padding: 1.2rem;
+font-size: 2rem;
+}
+
+.login-form-box input {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  width: 30rem;
+  padding: 0.5rem 0;
+border: 0.1rem solid lightgrey;
+outline: none;
 }

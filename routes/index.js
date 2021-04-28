@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const requireLogin = require("../configs/middleware");
 const fileUpload = require("../configs/cloudinary");
-const User = require("../models/User.model")
-const bcrypt = require("bcryptjs");
+const User = require("../models/User.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -11,21 +10,36 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/my-area", requireLogin, async (req, res) => {
-  res.render("auth/my-area", { user: req.session.currentUser });
+  const currentUser = await User.findById(req.session.currentUser._id)
+  res.render("auth/my-area", { user: currentUser });
 });
 
 router.get("/settings", requireLogin, async (req, res) => {
-  res.render("auth/settings",  { user: req.session.currentUser });
+  const currentUser = await User.findById(req.session.currentUser._id)
+  res.render("auth/settings",  { user: currentUser });
 });
 
 
-router.post("/my-area", fileUpload.single("image"), async (req, res) => {
+router.post("/settings", fileUpload.single("image"), async (req, res) => {
   // File path (URL) on Cloudinary
-  const fileOnCloudinary = req.file.path;
+ // const fileOnCloudinary = req.file.path;
   const id = req.session.currentUser._id;
-  const { username } = req.body;
+  const { username, city } = req.body;
+  if (req.file) {
+    await User.findByIdAndUpdate(id, { username, city, imageUrl: req.file.path });
+  } else {
+    await User.findByIdAndUpdate(id, { username, city });
+  }
+ 
 
-  await User.findByIdAndUpdate(id, { username, imageUrl: fileOnCloudinary });
+  res.redirect("/my-area");
+});
+
+router.post("/my-area", async (req, res) => {
+  const id = req.session.currentUser._id;
+  const { interests } = req.body;
+  
+    await User.findByIdAndUpdate(id, { interests });
 
   res.redirect("/my-area");
 });

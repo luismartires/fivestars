@@ -18,7 +18,7 @@
 
 <body>
 
-  <nav class="navbar-expand-lg navbar-light bg-light nav-item-box">
+  <nav class="navbar-expand-lg navbar-light bg-light navbar-box">
 
     <div class="container-fluid">
 
@@ -28,55 +28,71 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
 
-        <ul class="navbar-nav nav-box">
 
+          <div class="navbar nav-item-box-home">
 
-          <div class="navbar">
+            <div><img class= "navbar-logo-img" src="/images/star.png" alt=""></div>
 
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
+            <div>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+            </div>
 
             {{#if user}}
             <div class="nav-item-box">
+
+
               <li class="nav-item">
-                <a class="nav-link" href="/favorites" method="GET">Favorites</a>
+                <a class="nav-link" href="/favorites" method="GET">My Favorites</a>
               </li>
 
-              <div class="nav-item-box">
-                <li class="nav-item">
-                  <a class="nav-link" href="/my-area">My Area</a>
-                </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="nav-image-box" src="{{user.imageUrl}}" alt="" />
+                </a>
 
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Account
-                  </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li class="nav-item">
+                    <a class="dropdown-item" href="/my-area">My Area</a>
+                  </li>
+                  <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                  <li>
+                    <form action="/logout" method="POST"><button class="dropdown-item" type="submit">Logout</button>
+                    </form>
+                  </li>
+                </ul>
 
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="/settings">Settings</a></li>
-                    <li>
-                      <form action="/logout" method="POST"><button class="dropdown-item" type="submit">Logout</button>
-                      </form>
-                    </li>
-                  </ul>
-                  {{else}}
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Account
-                  </a>
+                {{else}}
 
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="/login">Login</a></li>
-                    <li><a class="dropdown-item" href="signup">Signup</a></li>
-                  </ul>
-              </div>
-              {{/if}}
-        </ul>
+                <div class="nav-item-box">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Account
+                </a>
+
+
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="/login">Sign In</a></li>
+                  <li><a class="dropdown-item" href="signup">Create Account</a></li>
+                </ul>
+
+            </div>
+
+          </div>
+
+
+          {{/if}}
+
+
       </div>
+      </ul>
+    </div>
 
     </div>
   </nav>
