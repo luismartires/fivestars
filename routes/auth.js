@@ -77,7 +77,7 @@ router.post("/signup", async (req, res) => {
     to: email, 
     subject: 'Login', 
     text: 'Welcome to 5tars page, Enjoy!',
-    html: `<b>message</b>`
+    html: `<b>you registered, start rating!</b>`
   })
   .then(info => res.redirect('/'))
   .catch(error => console.log(error));

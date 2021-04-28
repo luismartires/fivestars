@@ -26,7 +26,7 @@ router.get("/object-search", async (req, res) => {
   );
   let objects = result.results;
 
-  res.render("object-search-results", { objects, theObjectName, user: req.session.currentUser});
+  res.render("object-search-results", { objects, theObjectName, user: req.session.currentUser });
 });
 
 
@@ -74,9 +74,9 @@ router.get("/details/:id", async (req, res) => {
 
 
 router.get("/favorites", async (req, res) => {
-  const favorites = await Favorite.find({user: req.session.currentUser._id});
-  const ratings = await Rating.find({user: req.session.currentUser._id});
-  res.render("favorites", { favorites, ratings, user:  req.session.currentUser });
+  const favorites = await Favorite.find({ user: req.session.currentUser._id });
+  const ratings = await Rating.find({ user: req.session.currentUser._id });
+  res.render("favorites", { favorites, ratings, user: req.session.currentUser });
 });
 
 router.post("/favorites/:id", async (req, res) => {
@@ -90,16 +90,19 @@ router.post("/favorites/:id", async (req, res) => {
         apiKey: process.env.CLIENT_ID,
       }
     );
-    const item = result;
-    console.log(item);
-    const user = req.session.currentUser._id;
-    await Favorite.create({
-      objectId,
-      title: result.title,
-      poster: result.poster,
-      user,
-    });
-    res.redirect(`/details/${objectId}`);
+    const resultFav = await Favorite.find({ objectId: objectId });
+    if (resultFav.length === 0) {
+      const user = req.session.currentUser._id;
+      await Favorite.create({
+        objectId,
+        title: result.title,
+        poster: result.poster,
+        user,
+      });
+      res.redirect(`/details/${objectId}`);
+    } else {
+      res.redirect(`/details/${objectId}`);
+    }
   } catch (e) {
     res.render("error");
     console.log(`An error occured ${e}`);
