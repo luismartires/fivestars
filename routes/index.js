@@ -5,6 +5,7 @@ const fileUpload = require("../configs/cloudinary");
 const User = require("../models/User.model")
 const bcrypt = require("bcryptjs");
 
+
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index", { user: req.session.currentUser });
@@ -23,6 +24,10 @@ router.get("/settings", requireLogin, async (req, res) => {
   const user = await User.findById(req.session.currentUser._id)
   res.render("auth/settings", { user });
 });
+
+
+  
+  
 
 router.post("/my-area", fileUpload.single("image"), async (req, res) => {
   // File path (URL) on Cloudinary
@@ -45,23 +50,6 @@ router.post("/my-area", fileUpload.single("image"), async (req, res) => {
   res.redirect("/my-area");
 });
 
-router.post('/send-email', (req, res, next) => {
-  let { email, subject, message } = req.body;
-  let transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: 'your email address',
-      pass: 'your email password'
-    }
-  });
-  transporter.sendMail({
-    from: '"5tars project " <5tars.backendproject@gmail.com>',
-    to: email, 
-    subject: subject, 
-    text: SignUp,
-    html: `<b>${message}</b>`
-  })
-  .then(info => res.render('message', {email, subject, message, info}))
-  .catch(error => console.log(error));
-});
+
+
 module.exports = router;
