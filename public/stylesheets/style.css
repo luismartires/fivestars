@@ -1,16 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
 /* NAVBAR */
 
-
-
-.navbar-logo-img{
+.navbar-logo-img {
   height: 4rem;
   padding-bottom: 0.7rem;
   padding-right: 2rem;
@@ -24,7 +20,7 @@
   justify-content: space-between;
 }
 
-.nav-item-box{
+.nav-item-box {
   font-size: 2.5rem;
   font-family: Yanone Kaffeesatz;
   display: flex;
@@ -35,21 +31,21 @@
 }
 
 .nav-image-box {
-height: 5rem;
-width: 5rem;
-border-radius: 5rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 5rem;
 }
 
 .nav-link {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .navbar-box {
- border-bottom: 0.4rem solid #222222;
+  border-bottom: 0.4rem solid #222222;
 }
 
 .navbar {
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .dropdown-toggle {
@@ -57,11 +53,7 @@ border-radius: 5rem;
   margin-left: 2rem;
 }
 
-
-
 /* HOME */
-
-
 
 .index-section-box {
   text-align: center;
@@ -109,13 +101,12 @@ border-radius: 5rem;
   flex-direction: row;
   justify-content: center;
   align-items: center;
- border: 0.2rem solid black;
- border-start-start-radius: 5rem;
- border-end-end-radius: 5rem;
- height: 33rem;
- padding: 2rem;
- background-color: rgba(250, 0, 0, 0.6);
- 
+  border: 0.2rem solid black;
+  border-start-start-radius: 5rem;
+  border-end-end-radius: 5rem;
+  height: 33rem;
+  padding: 2rem;
+  background-color: rgba(250, 0, 0, 0.6);
 }
 
 .index-section-title-five {
@@ -139,7 +130,8 @@ border-radius: 5rem;
   margin-top: 2rem;
   font-size: 2rem;
   color: rgba(245, 197, 24, 0.9);
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
 }
 
 .index-section-buttons-box {
@@ -162,7 +154,6 @@ border-radius: 5rem;
   cursor: pointer;
   transform: translateY(-10px);
   transition: transform 1s;
-
 }
 
 .index-section-buttons a {
@@ -175,22 +166,16 @@ border-radius: 5rem;
   color: red;
 }
 
-
-
-/* SEARCH GAMES/MOVIES/SERIES */ 
-
-
+/* SEARCH GAMES/MOVIES/SERIES */
 
 .index-section-search-box {
   text-transform: uppercase;
   font-size: 10rem;
-          -webkit-transform:
-            translateY(-5px)
-            translateX(24rem)
-            rotate(-20deg); 
-        position: absolute;
-        color: rgba(245, 197, 24, 0.9);
-        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  -webkit-transform: translateY(-5px) translateX(24rem) rotate(-20deg);
+  position: absolute;
+  color: rgba(245, 197, 24, 0.9);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
 }
 
 .main-div-form {
@@ -201,10 +186,10 @@ border-radius: 5rem;
 }
 
 .main-div-input {
-padding: 1rem 40rem 1rem 1rem;
-border-radius: 2%;
-border: 0.1rem solid lightgrey;
-outline: none;
+  padding: 1rem 40rem 1rem 1rem;
+  border-radius: 2%;
+  border: 0.1rem solid lightgrey;
+  outline: none;
 }
 
 .main-div-form-btn {
@@ -219,18 +204,13 @@ outline: none;
 
 .main-div-form-btn:hover {
   cursor: pointer;
-  background-color: rgba(200,83,79);
+  background-color: rgba(200, 83, 79);
   outline: none;
 }
 
-
-
 /* SEARCH-RESULTS GAMES/MOVIES/SERIES */
 
-
 /* FOOTER */
-
-
 
 .footer-box {
   border-top: 0.4rem solid #222222;
@@ -287,7 +267,7 @@ outline: none;
 }
 
 .contacts-links-box img {
-height: 3rem;
+  height: 3rem;
 }
 
 .companies {
@@ -300,13 +280,9 @@ height: 3rem;
   height: 10rem;
 }
 
-
-
 /* SETTINGS */
 
-
-
-.settings-div-h2-box h2{
+.settings-div-h2-box h2 {
   font-weight: 700;
   font-size: 4rem;
   color: white;
@@ -315,7 +291,7 @@ height: 3rem;
   transform: skewX(-15deg);
   margin-bottom: 4rem;
   border-start-start-radius: 2rem;
-  border-end-end-radius: 2rem;  
+  border-end-end-radius: 2rem;
 }
 
 .settings-div-form-box {
@@ -354,7 +330,7 @@ height: 3rem;
   margin: 0 3rem;
 }
 
-.settings-form-image {  
+.settings-form-image {
   width: 20rem;
   height: 20rem;
   margin-bottom: 3rem;
@@ -380,8 +356,8 @@ height: 3rem;
   text-align: center;
   width: 30rem;
   padding: 0.5rem 0;
-border: 0.1rem solid lightgrey;
-outline: none;
+  border: 0.1rem solid lightgrey;
+  outline: none;
 }
 
 .settings-form-account label {
@@ -401,15 +377,11 @@ outline: none;
 
 .settings-form-button:hover {
   cursor: pointer;
-  background-color: rgba(200,83,79);
+  background-color: rgba(200, 83, 79);
   outline: none;
 }
 
-
-
 /* MY-AREA */
-
-
 
 .myarea-div-form-box {
   background-color: white;
@@ -432,7 +404,7 @@ outline: none;
   padding: 1rem;
 }
 
-.myarea-form-name label{
+.myarea-form-name label {
   border-start-start-radius: 2rem;
   border-end-end-radius: 2rem;
   font-weight: 700;
@@ -457,8 +429,8 @@ outline: none;
 }
 
 .myarea-form-details label {
-padding: 1rem;
-font-size: 4rem;
+  padding: 1rem;
+  font-size: 4rem;
 }
 
 .myarea-form-name-box {
@@ -477,22 +449,18 @@ font-size: 4rem;
   color: white;
 }
 
-
-
 /* LOGIN / SIGNUP */
-
-
 
 .login-form-title {
   border-start-start-radius: 2rem;
   border-end-end-radius: 2rem;
-font-weight: 700;
-font-size: 6rem;
-color: white;
-background-color: red;
-padding: 0 3rem;
-transform: skewX(-15deg);
-margin-bottom: 4rem;
+  font-weight: 700;
+  font-size: 6rem;
+  color: white;
+  background-color: red;
+  padding: 0 3rem;
+  transform: skewX(-15deg);
+  margin-bottom: 4rem;
 }
 
 .login-div-form-box {
@@ -525,24 +493,24 @@ margin-bottom: 4rem;
 }
 
 .login-form-button {
-margin: 2rem;
-padding: 0.5rem 2rem;
-border: 0.1rem solid red;
-font-weight: 700;
-font-size: 1.5rem;
-background-color: red;
-color: white;
+  margin: 2rem;
+  padding: 0.5rem 2rem;
+  border: 0.1rem solid red;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background-color: red;
+  color: white;
 }
 
 .login-form-button:hover {
   cursor: pointer;
-  background-color: rgba(200,83,79);
+  background-color: rgba(200, 83, 79);
   outline: none;
 }
 
 .login-form-box label {
   padding: 1.2rem;
-font-size: 2rem;
+  font-size: 2rem;
 }
 
 .login-form-box input {
@@ -551,6 +519,10 @@ font-size: 2rem;
   text-align: center;
   width: 30rem;
   padding: 0.5rem 0;
-border: 0.1rem solid lightgrey;
-outline: none;
+  border: 0.1rem solid lightgrey;
+  outline: none;
+}
+
+.search-result-item {
+  margin-bottom: 4rem;
 }

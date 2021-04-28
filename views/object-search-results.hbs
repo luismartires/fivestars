@@ -1,14 +1,17 @@
-<h1>{{theObjectName}}</h1>
-<div class="container">
-  {{#each objects}}
-  <div class="row">
-    <div class="col-md-4">
-      <img src="{{poster}}" alt="poster img">
-      <h2>{{title}}</h2>
+<section class="search-results">
+  <div class="container">
+    <h1>Keyword: "{{theObjectName}}"</h1>
+    <div class="row">
+      {{#each objects}}
+      <div class="col-md-3 search-result-item ">
+        <img class="img-fluid " src="{{poster}}" alt="poster img">
+        <h2>{{title}}</h2>
+        <a href="/details/{{imdbid}}">See details</a>
+        <a href="/review/{{imdbid}}">+</a>
+      </div>
+      {{else}}
+      <p>No results found.</p>
+      {{/each}}
     </div>
-    <a href="/details/{{imdbid}}">See details</a>
-
-    <a href="/review/{{imdbid}}">+</a>
   </div>
-  {{/each}}
-</div>
+</section>
