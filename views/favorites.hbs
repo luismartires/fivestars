@@ -1,15 +1,15 @@
 <h1>Favorites</h1>
 <hr>
 {{#each favorites}}
-  {{#each ../ratings}}
-    {{#is objectId ../objectId}}
-  <p>Your rating:  {{rating}} </p> 
-    {{else}}
-    <p>Rate this thingy</p>
-    {{/is}}
-  {{/each}}
-  <div>
-    <img src="{{poster}}" alt="">
-    {{title}}
-  </div>
+{{#each ../ratings}}
+{{#is objectId ../objectId}}
+<p>Your rating: {{rating}} </p>
+{{else}}
+<p>Rate this thingy</p>
+{{/is}}
+{{/each}}
+<div>
+  <img src="{{poster}}" alt="">
+  {{title}}
+</div>
 {{/each}}
