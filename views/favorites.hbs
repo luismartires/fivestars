@@ -1,15 +1,22 @@
-<h1>Favorites</h1>
-<hr>
-{{#each favorites}}
-{{#each ../ratings}}
-{{#is objectId ../objectId}}
-<p>Your rating: {{rating}} </p>
-{{else}}
-<p>Rate this thingy</p>
-{{/is}}
-{{/each}}
-<div>
-  <img src="{{poster}}" alt="">
-  {{title}}
-</div>
-{{/each}}
+<section class="favorites">
+  <div class="container">
+    <h1>Favorites</h1>
+    <div class="row">
+      {{#each favorites}}
+      <div class="col-md-3 search-result-item ">
+        {{#each ../ratings}}
+        {{#is objectId ../objectId}}
+        <p>Your rating: {{rating}}</p>
+        {{else}}
+        <a href="/review/{{imdbid}}">Add a rating</a>
+        {{/is}}
+        {{/each}}
+        <div>
+          <img class="img-fluid" src="{{poster}}" alt="poster">
+          {{title}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

@@ -7,33 +7,7 @@ const Favorite = require("../models/Favorite.model");
 
 const imdb = require("imdb-api");
 
-
-
-/* OBJECT-SEARCH */
-
-
-
-router.get("/object-search", async (req, res) => {
-  const { theObjectName } = req.query;
-
-  const result = await imdb.search(
-    {
-      name: theObjectName,
-    },
-    {
-      apiKey: process.env.CLIENT_ID,
-    }
-  );
-  let objects = result.results;
-
-  res.render("object-search-results", { objects, theObjectName, user: req.session.currentUser});
-});
-
-
-
 /* DETAILS */
-
-
 
 router.post("/details/:id/rating", requireLogin, async (req, res) => {
   try {
@@ -67,16 +41,16 @@ router.get("/details/:id", async (req, res) => {
   res.render("object-details", { object, user: req.session.currentUser });
 });
 
-
-
 /* FAVORITES */
 
-
-
 router.get("/favorites", async (req, res) => {
-  const favorites = await Favorite.find({user: req.session.currentUser._id});
-  const ratings = await Rating.find({user: req.session.currentUser._id});
-  res.render("favorites", { favorites, ratings, user:  req.session.currentUser });
+  const favorites = await Favorite.find({ user: req.session.currentUser._id });
+  const ratings = await Rating.find({ user: req.session.currentUser._id });
+  res.render("favorites", {
+    favorites,
+    ratings,
+    user: req.session.currentUser,
+  });
 });
 
 router.post("/favorites/:id", async (req, res) => {
@@ -90,8 +64,6 @@ router.post("/favorites/:id", async (req, res) => {
         apiKey: process.env.CLIENT_ID,
       }
     );
-    const item = result;
-    console.log(item);
     const user = req.session.currentUser._id;
     await Favorite.create({
       objectId,
@@ -106,11 +78,7 @@ router.post("/favorites/:id", async (req, res) => {
   }
 });
 
-
-
 /* ADD-REVIEW */
-
-
 
 router.get("/review/:id", async (req, res) => {
   const result = await imdb.get(
