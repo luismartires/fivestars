@@ -1,35 +1,36 @@
-<<<<<<< HEAD
-<h1>{{theObjectName}}</h1>
-<div class="container">
-  
-  {{#each objects}}
-  <div class="row">
-    <div class="col-md-4">
-      <img src="{{poster}}" alt="poster img">
-      <h2>{{title}}</h2>
-    </div>
-    <a href="/details/{{imdbid}}">See details</a>
+<section class="search-results-bg">
+  <div class="container search-result">
+    <h1>{{theObjectName}}</h1>
 
-    <a href="/review/{{imdbid}}">+</a>
-  </div>
-  {{/each}}
-</div>
-=======
-<section class="search-results">
-  <div class="container">
-    <h1>Keyword: "{{theObjectName}}"</h1>
-    <div class="row">
+    <div class="row search-result-item-box">
       {{#each objects}}
-      <div class="col-md-3 search-result-item ">
-        <img class="img-fluid " src="{{poster}}" alt="poster img">
-        <h2>{{title}}</h2>
-        <a href="/details/{{imdbid}}">See details</a>
-        <a href="/review/{{imdbid}}">+</a>
+
+      <div class="col-md-3 search-result-item">
+
+        <div class="search-result-image">
+          <img class="search-result-image-img" src="{{poster}}" alt="poster img">
+
+          <div class="search-result-image-overlay search-result-image-overlay--blur">
+
+            <div class="search-result-add-fav">
+              <a href="/review/{{imdbid}}"><img src="../images/add-favorite.png" alt=""></a>
+            </div>
+
+            <div class="search-result-image-title">
+              <h2>{{title}}</h2>
+            </div>
+
+            <div class="search-result-image-details">
+              <a href="/details/{{imdbid}}">See details</a>
+            </div>
+          </div>
+
+        </div>
+
       </div>
       {{else}}
-      <p>No results found.</p>
+      <p class="object-search-no-results">No results found.</p>
       {{/each}}
     </div>
   </div>
 </section>
->>>>>>> 174dadaaed518480e114f42c03272b9a93ae43be

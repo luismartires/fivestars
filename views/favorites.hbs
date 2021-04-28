@@ -1,20 +1,40 @@
-<section class="favorites">
-  <div class="container">
+<section class="search-results-bg">
+  <div class="container search-result">
     <h1>Favorites</h1>
-    <div class="row">
+
+    <div class="row search-result-item-box">
       {{#each favorites}}
-      <div class="col-md-3 search-result-item ">
-        {{#each ../ratings}}
-        {{#is objectId ../objectId}}
-        <p>Your rating: {{rating}}</p>
-        {{else}}
-        <a href="/review/{{imdbid}}">Add a rating</a>
-        {{/is}}
-        {{/each}}
-        <div>
-          <img class="img-fluid" src="{{poster}}" alt="poster">
-          {{title}}
+
+      <div class="col-md-3 search-result-item">
+
+
+        <div class="search-result-image">
+          <img class="search-result-image-img" src="{{poster}}" alt="poster">
+
+
+          <div class="search-result-image-overlay search-result-image-overlay--blur">
+
+            <div class="favorites-result-delete-fav">
+              <a href="#"><img src="../images/add-favorite.png" alt=""></a>
+            </div>
+
+            <div class="search-result-image-title">
+              <h2>{{title}}</h2>
+            </div>
+
+            <div class="search-result-image-details">
+              {{#each ../ratings}}
+              {{#is objectId ../objectId}}
+              <p>Your rating: {{rating}}</p>
+              {{else}}
+              <a href="/review/{{imdbid}}">Add a rating</a>
+              {{/is}}
+              {{/each}}
+            </div>
+          </div>
         </div>
+
+
       </div>
       {{/each}}
     </div>
