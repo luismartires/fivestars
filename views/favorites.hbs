@@ -1,3 +1,18 @@
+<h1>Favorites</h1>
+<hr>
+{{#each favorites}}
+  {{#each ../ratings}}
+    {{#is objectId ../objectId}}
+  <p>Your rating:  {{rating}} </p> 
+    {{else}}
+    <p>Rate this thingy</p>
+    {{/is}}
+  {{/each}}
+  <div>
+    <img src="{{poster}}" alt="">
+    {{title}}
+  </div>
+{{/each}}
 <h1>{{movie.title}}</h1>
 <hr>
 <p>Year: {{movie.year}}</p>
@@ -7,3 +22,4 @@
   <input type="number" name="rating" min="1" max="5" />
   <button type="submit">Submit</button>
 </form>
+>>>>>>> 1e24adb85e1fde093179a52f7ee1aa010fb667fd
