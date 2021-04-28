@@ -4,7 +4,7 @@ const imdb = require("imdb-api");
 
 /* GET home page */
 router.get("/games", async (req, res) => {
-  res.render("games");
+  res.render("games", {user: req.session.currentUser});
 });
 
 router.get("/search-game", async (req, res) => {
@@ -24,7 +24,7 @@ router.get("/search-game", async (req, res) => {
   });
   console.log(filteredArr);
 
-  res.render("object-search-results", { objects: filteredArr, theObjectName });
+  res.render("object-search-results", { objects: filteredArr, theObjectName, user: req.session.currentUser });
 });
 
 module.exports = router;
