@@ -15,7 +15,9 @@
           <div class="search-result-image-overlay search-result-image-overlay--blur">
 
             <div class="favorites-result-delete-fav">
-              <a href="#"><img src="../images/add-favorite.png" alt=""></a>
+              <form action="/favorites/{{id}}/delete" method="POST">
+                <button type="submit">X</button>
+              </form>
             </div>
 
             <div class="search-result-image-title">
@@ -25,18 +27,19 @@
               <button type="submit">Share</button>
               </form>
             <div class="search-result-image-details">
+          
+              {{#contains ../ratingsIds objectId}}
               {{#each ../ratings}}
               {{#is objectId ../objectId}}
               <p>Your rating: {{rating}}</p>
-              {{else}}
-              <a href="/review/{{imdbid}}">Add a rating</a>
               {{/is}}
               {{/each}}
+              {{else}}
+              <a href="/review/{{imdbid}}">Add a rating</a>
+              {{/contains}}
             </div>
           </div>
         </div>
-
-
       </div>
       {{/each}}
     </div>

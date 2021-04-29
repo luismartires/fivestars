@@ -69,11 +69,10 @@ router.get("/details/:id", async (req, res) => {
 router.get("/favorites", async (req, res) => {
   const favorites = await Favorite.find({ user: req.session.currentUser._id });
   const ratings = await Rating.find({ user: req.session.currentUser._id });
-  res.render("favorites", {
-    favorites,
-    ratings,
-    user: req.session.currentUser,
-  });
+  let ratingsIds = ratings.map(rates => {
+    return rates.objectId
+  })
+  res.render("favorites", { favorites, ratings, ratingsIds, user: req.session.currentUser });
 });
 
 router.post("/favorites/:id", async (req, res) => {
@@ -121,5 +120,14 @@ router.get("/review/:id", async (req, res) => {
   console.log("in", object);
   res.render("add-review", { object, user: req.session.currentUser });
 });
+
+router.post('/favorites/:id/delete', async (req, res) => {
+  const objectId = req.params.id;
+  await Favorite.findByIdAndDelete(objectId);
+  res.redirect('/favorites');
+});
+
+
+
 
 module.exports = router;

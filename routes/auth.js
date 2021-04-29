@@ -84,7 +84,7 @@ router.post("/signup", async (req, res) => {
   })
   .then(info => res.redirect('/'))
   .catch(error => console.log(error));
-  res.redirect("/");
+  res.redirect("/");//res.render('/', {user});
 });
 
 router.post("/logout", (req, res) => {
