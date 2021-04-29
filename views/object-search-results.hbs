@@ -4,29 +4,28 @@
 
     <div class="row search-result-item-box">
       {{#each objects}}
-
       <div class="col-md-3 search-result-item">
-
         <div class="search-result-image">
+          {{#eq poster "N/A"}}
+          <img class="search-result-image-img"
+            src="https://res.cloudinary.com/dipcaihd5/image/upload/v1619690426/index/default-image_j96qsc.png"
+            alt="default img">
+
+          {{else}}
           <img class="search-result-image-img" src="{{poster}}" alt="poster img">
-
+          {{/eq}}
           <div class="search-result-image-overlay search-result-image-overlay--blur">
-
             <div class="search-result-add-fav">
               <a href="/review/{{imdbid}}"><img src="../images/add-favorite.png" alt=""></a>
             </div>
-
             <div class="search-result-image-title">
               <h2>{{title}}</h2>
             </div>
-
             <div class="search-result-image-details">
               <a href="/details/{{imdbid}}">See details</a>
             </div>
           </div>
-
         </div>
-
       </div>
       {{else}}
       <p class="object-search-no-results">No results found.</p>

@@ -10,7 +10,7 @@ const logger = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-const helpers = require('handlebars-helpers');
+const helpers = require("handlebars-helpers");
 
 hbs.registerHelper(helpers());
 
@@ -45,7 +45,7 @@ app.use(
     cookie: {
       sameSite: true,
       httpOnly: true,
-      maxAge: 60000,
+      maxAge: 600000,
     },
     rolling: true,
     store: new MongoStore({
