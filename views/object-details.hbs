@@ -1,7 +1,54 @@
-<h1>{{object.title}}</h1>
-<hr>
-<p>Year: {{object.year}}</p>
-<img src="{{object.poster }}" alt="{{object.title}}" />
-<form action="/review/{{imdbid}}" method="POST">
-  <button type="submit">+</button>
-</form>
+<section class="object-details-div-box">
+
+  <div class="object-details-image">
+    {{#eq object.poster "N/A"}}
+    <img class="search-result-image-img"
+      src="https://res.cloudinary.com/dipcaihd5/image/upload/v1619690426/index/default-image_j96qsc.png"
+      alt="default img">
+    {{else}}
+    <img src="{{object.poster }}" alt="{{object.title}}" />
+    {{/eq}}
+  </div>
+
+  <div class="object-details-div-content-box">
+
+    <div class="object-details-div-title">
+      <h1>{{object.title}}</h1>
+    </div>
+
+    <div class="object-details-div-under-title">
+      <div>
+        <p class="object-details-div-rating"> <b> Metracritic <p
+              class="object-details-div-rating object-details-div-rating-box">
+              {{object.rating}}</b> </p>
+        </p>
+      </div>
+
+      <div>
+        <p class="object-details-div-under-title-year">{{object.year}}</p>
+      </div>
+
+      <div>
+        <p class="object-details-div-under-title-rated">{{object.rated}}</p>
+      </div>
+
+    </div>
+
+    <div class="object-details-div-under-title-plot-box">
+      <p class="object-details-div-under-title-plot">{{object.plot}}</p>
+    </div>
+
+    <div class="object-details-div-form-button-box">
+      <form action="/favorites/{{object.imdbid}}" method="POST">
+        <button type="submit"><img src="../images/add-favorite.png" alt="">Add To Favorites</button>
+      </form>
+    </div>
+
+    <div class="object-details-under-button">
+      <p><b>Starring:</b> {{object.actors}}</p>
+      <p><b>Genre:</b> {{object.genres}}</p>
+      <p><b>Awards:</b> {{object.awards}}</p>
+    </div>
+
+  </div>
+</section>

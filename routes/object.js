@@ -101,9 +101,9 @@ router.post("/favorites/:id", async (req, res) => {
         poster: result.poster,
         user,
       });
-      res.redirect(`/details/${objectId}`);
+      res.redirect("/favorites");
     } else {
-      res.redirect(`/details/${objectId}`);
+      res.redirect("/favorites");
     }
   } catch (e) {
     res.render("error");

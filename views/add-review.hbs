@@ -1,13 +1,44 @@
-<h1>{{object.title}}</h1>
-<hr>
-<p>Year: {{object.year}}</p>
-<img src="{{object.poster }}" alt="{{object.title}}" />
-<form action="/details/{{object.imdbid}}/rating" method="POST">
-  <label>Rating</label>
-  <input type="number" name="rating" min="1" max="5" />
-  <button type="submit">+</button>
-</form>
+<section class="search-results-bg">
 
-<form action="/favorites/{{object.imdbid}}" method="POST">
-  <button type="submit">Add Fav</button>
-</form>
+  <div class="container search-result">
+    <h1>Add To Favorites</h1>
+
+    <div class="add-review-form-box">
+
+      <div class="object-details-div-title">
+        <h2>{{object.title}}</h2>
+      </div>
+
+      <div class="object-details-image">
+        {{#eq object.poster "N/A"}}
+        <img class="search-result-image-img"
+          src="https://res.cloudinary.com/dipcaihd5/image/upload/v1619690426/index/default-image_j96qsc.png"
+          alt="default img">
+        {{else}}
+        <img class="add-review-details-image" src="{{object.poster }}" alt="{{object.title}}" />
+        {{/eq}}
+      </div>
+
+      <form class="add-review-form-rating-box" action="/details/{{object.imdbid}}/rating" method="POST">
+
+        <label>(Write a Rating / Press the Star Button / Add to your Favorites)</label>
+
+        <div class="add-review-form-rating">
+          <div class="add-review-number-box">
+            <input type="number" name="rating" min="1" max="5"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              type="number" maxlength="1" />
+          </div>
+          <button type="submit"><img src="/images/star.png" alt=""></button>
+        </div>
+      </form>
+
+      <div class="add-review-div-form-button-box">
+        <form action="/favorites/{{object.imdbid}}" method="POST">
+          <button type="submit"><img src="../images/add-favorite.png" alt="">Add To Favorites</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
