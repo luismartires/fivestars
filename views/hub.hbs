@@ -1,0 +1,42 @@
+<h1>Hub</h1>
+{{#each allShares}}
+<div>
+  <img src="{{user.imageUrl}}" alt="user img">
+  <h2>{{user.username}}</h2>
+
+</div>
+<h2>{{title}}</h2>
+<img src="{{poster}}" alt="poster img">
+<p>Rate: {{rating.rating}}</p>
+<p>{{user.interests}}</p>
+{{/each}}
+
+
+
+{{!-- <div class="search-result-image-overlay search-result-image-overlay--blur">
+
+  <div class="favorites-result-delete-fav">
+    <a href="#"><img src="../images/add-favorite.png" alt=""></a>
+  </div>
+
+  <div class="search-result-image-title">
+  </div>
+
+  <div class="search-result-image-details">
+    {{#each ../ratings}}
+    {{#is objectId ../objectId}}
+    <p>Your rating: {{rating}}</p>
+    {{else}}
+    <a href="/review/{{imdbid}}">Add a rating</a>
+    {{/is}}
+    {{/each}}
+  </div>
+</div>
+</div>
+
+
+</div>
+{{/each}}
+</div>
+</div>
+</section> --}}
