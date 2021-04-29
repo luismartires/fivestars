@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="search-results">
   <div class="container">
     <h1>Keyword: "{{theObjectName}}"</h1>
@@ -15,3 +16,41 @@
     </div>
   </div>
 </section>
+=======
+<section class="search-results-bg">
+  <div class="container search-result">
+    <h1>{{theObjectName}}</h1>
+
+    <div class="row search-result-item-box">
+      {{#each objects}}
+
+      <div class="col-md-3 search-result-item">
+
+        <div class="search-result-image">
+          <img class="search-result-image-img" src="{{poster}}" alt="poster img">
+
+          <div class="search-result-image-overlay search-result-image-overlay--blur">
+
+            <div class="search-result-add-fav">
+              <a href="/review/{{imdbid}}"><img src="../images/add-favorite.png" alt=""></a>
+            </div>
+
+            <div class="search-result-image-title">
+              <h2>{{title}}</h2>
+            </div>
+
+            <div class="search-result-image-details">
+              <a href="/details/{{imdbid}}">See details</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      {{else}}
+      <p class="object-search-no-results">No results found.</p>
+      {{/each}}
+    </div>
+  </div>
+</section>
+>>>>>>> 4f817c888ebd4aa5df944f50cd9493c0cfe12054

@@ -106,29 +106,36 @@
   border-end-end-radius: 5rem;
   height: 33rem;
   padding: 2rem;
+  padding-bottom: 4rem;
   background-color: rgba(250, 0, 0, 0.6);
+  z-index: 2;
+  position: relative;
 }
 
 .index-section-title-five {
   text-align: center;
   color: white;
   font-size: 40rem;
-  text-shadow: 0.1rem 0.7rem black;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 10px 0 black,
+    1px 10px 0 black;
 }
 
 .index-section-title-tars-box {
   transform-origin: top left;
   transform: skew(-15deg);
+  z-index: 1;
+  position: relative;
 }
 
 .index-section-title-tars {
   border: 0.1rem solid black;
   background-color: rgba(0, 0, 0, 0.6);
   border-end-end-radius: 5rem;
-  padding: 3.9rem 4rem 0 4rem;
+  padding: 4rem 4rem 1rem 6rem;
   color: white;
   font-size: 21rem;
-  text-shadow: 0.1rem 0.7rem black;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 10px 0 black,
+    1px 10px 0 black;
 }
 
 .index-section-title-p {
@@ -163,7 +170,7 @@
 
 .index-section-buttons a {
   color: black;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 3rem;
 }
 
@@ -215,7 +222,144 @@
   outline: none;
 }
 
-/* SEARCH-RESULTS GAMES/MOVIES/SERIES */
+/* SEARCH-RESULTS GAMES/MOVIES/SERIES */ /* FAVORITES */
+
+.search-results-bg {
+  background-color: black;
+}
+
+.search-result h1 {
+  padding: 3rem 0;
+  border-bottom: 0.4rem solid #222222;
+  text-transform: uppercase;
+  font-family: Yanone Kaffeesatz;
+}
+
+.search-result-item {
+  margin-bottom: 4rem;
+  margin-right: 4rem;
+}
+
+.search-result-image {
+  position: relative;
+  width: 30rem;
+}
+
+.search-result-image-img {
+  display: block;
+  width: 100%;
+  height: 40rem;
+}
+
+.search-result-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  font-family: Yanone Kaffeesatz;
+}
+
+.search-result-image-overlay--blur {
+  backdrop-filter: blur(0.2rem);
+}
+
+.search-result-image-overlay > * {
+  transform: translateY(2rem);
+  transition: transform 0.25s;
+}
+
+.search-result-image-overlay:hover {
+  opacity: 1;
+}
+
+.search-result-image-overlay:hover > * {
+  transform: translateY(0);
+}
+
+.search-result-image-title {
+  color: white;
+}
+
+.search-result-image-details {
+  margin-top: 2rem;
+}
+
+.search-result-image-details a {
+  text-decoration: none;
+  background-color: red;
+  padding: 0.4rem 0.5rem;
+  border-start-start-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+  color: white;
+}
+
+.search-result-image-details a:hover {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(200, 83, 79);
+  outline: none;
+  text-decoration: none;
+}
+
+.search-result-add-fav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding: 1rem;
+  transition: 0.25s;
+}
+
+.search-result-add-fav:hover {
+  background-color: greenyellow;
+  border-end-start-radius: 1rem;
+  transition: 0.25s;
+}
+
+.search-result-add-fav img {
+  height: 2rem;
+}
+
+.search-result-item-box {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.object-search-no-results {
+  margin: 8.3rem;
+  margin-right: 6.5rem;
+}
+
+.favorites-result-delete-fav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding: 1rem;
+  transition: 0.25s;
+}
+
+.favorites-result-delete-fav:hover {
+  background-color: rgb(255, 50, 50);
+  border-end-start-radius: 1rem;
+  transition: 0.25s;
+}
+
+.favorites-result-delete-fav img {
+  height: 2rem;
+  transform: rotate(45deg);
+}
 
 /* FOOTER */
 
@@ -267,7 +411,7 @@
 .contacts-links-box div:hover {
   border: 0.1rem solid #222222;
   padding: 0.5rem;
-  border-radius: 20px;
+  border-radius: 2rem;
   background-color: #222222;
   height: 4.5rem;
   width: 4.5rem;
@@ -529,6 +673,4 @@
   outline: none;
 }
 
-.search-result-item {
-  margin-bottom: 4rem;
-}
+/* JQUERY */
