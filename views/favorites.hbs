@@ -21,7 +21,9 @@
             <div class="search-result-image-title">
               <h2>{{title}}</h2>
             </div>
-
+            <form action="/hub/{{id}}" method="POST">
+              <button type="submit">Share</button>
+              </form>
             <div class="search-result-image-details">
               {{#each ../ratings}}
               {{#is objectId ../objectId}}
