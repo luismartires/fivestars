@@ -3,22 +3,35 @@
     <div class="index-section-title-box">
       <div class="settings-div-form-box">
 
-        <form class="settings-div-form" action="/my-area" method="POST" enctype="multipart/form-data">
-          <h2>{{user.username}}</h2>
+        <form class="settings-div-form" action="/settings" method="POST" enctype="multipart/form-data">
 
           <div class="settings-div-form-list">
 
             <div class="settings-form-image-box">
+              <div class="settings-div-h2-box">
+                <h2>{{user.username}}</h2>
+              </div>
+
               <div class="settings-form-image">
                 <img class="myarea-image" src="{{user.imageUrl}}" alt="" />
               </div>
+
               <input class="settings-form-image-button" type="file" name="image" />
             </div>
 
+
             <div>
               <div class="settings-form-account">
+
+                <label>Created At</label>
+                {{user.createdAt}}
+
                 <label>Username</label>
-                <input type="text" name="name" value="{{user.username}}">
+                <input class="settings-form-input" type="text" name="username" value="{{user.username}}"
+                  autocomplete="off">
+
+                <label>City</label>
+                <input class="settings-form-input" type="text" name="city" value="{{user.city}}" autocomplete="off">
 
                 <button class="settings-form-button" type="submit">Edit</button>
               </div>

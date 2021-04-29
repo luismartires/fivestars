@@ -1,40 +1,43 @@
-<body>
-  <section class="index-section-box">
-    <div class="index-section-title-box">
+<section class="index-section-box">
+  <div class="index-section-title-box">
 
-      <div class="myarea-div-form-box">
+    <div class="myarea-div-form-box">
 
-        <div class="settings-div-form">
+      <div class="settings-div-form">
 
-          <form class="myarea-div-form-list">
+        <div class="myarea-div-form-list">
 
 
-            <div class="myarea-form-image-box">
-              <div class="myarea-form-image">
-                <img class="myarea-image" src="{{user.imageUrl}}" alt="" />
-              </div>
+          <div class="myarea-form-image-box">
+            <div class="myarea-form-image">
+              <img class="myarea-image" src="{{user.imageUrl}}" alt="" />
             </div>
+          </div>
 
-            <div>
-              <div class="myarea-form-name">
-                <label>{{user.username}}</label>
-              </div>
+          <div class="myarea-form-name-box">
+            <div class="myarea-form-name">
+              <label>{{user.username}}</label>
             </div>
-            <div>
-              <label for="
-              ">City <br> "{city}"</label>
-            </div>
+          </div>
 
-            <div>
-              <label for="">Interests</label> <br>
 
-              <input type="text" value="add,your,interests" data-role="tagsinput"></input>
+          <div class="myarea-form-details">
+            <label for="">City</label>
+            <p>{{user.city}}</p>
+          </div>
 
+          <form class="myarea-form-details" action="/my-area" method="POST">
+
+            <label for="">Interests</label> <br>
+
+            <input type="text" value="{{user.interests}}" name="interests" data-role="tagsinput"></input>
+            <br>
+            <button type="submit">Update</button>
           </form>
+
         </div>
 
 
       </div>
     </div>
-  </section>
-</body>
+</section>

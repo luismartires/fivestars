@@ -1,15 +1,32 @@
-<h2>Login</h2>
-<form action="/login" method="POST">
-  <label>Username:</label>
-  <input type="text" name="username" required />
+<section class="index-section-box">
+  <div class="index-section-title-box">
+    <div class="login-div-form-box">
 
-  <label>Password:</label>
-  <input type="password" name="password" required />
-  <button type="submit">Sign in</button>
+      <div>
+        <h2 class="login-form-title">Login</h2>
+      </div>
 
-</form>
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
-{{/if}}
+      <div>
+        <form class="login-form-box" action="/login" method="POST">
+          <label>Username</label>
+          <input type="text" name="username" autocomplete="off" required />
 
-<p>Don't have an account? Sign up <a href="/signup">here</a>!</p>
+          <label>Password</label>
+          <input type="password" name="password" required />
+
+          <div>
+            <button class="login-form-button" type="submit">Sign in</button>
+          </div>
+        </form>
+        {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+        {{/if}}
+      </div>
+
+      <div>
+        <p>Don't have an account? Sign up <a href="/signup">here</a>!</p>
+      </div>
+
+    </div>
+  </div>
+</section>

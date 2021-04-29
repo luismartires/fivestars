@@ -17,7 +17,16 @@ const userSchema = new Schema({
   imageUrl: {
     type: String,
     default: ''
+  },
+  city: {
+    type: String,
+    default: ''
+  },
+  interests: {
+    type: String,
+    default: ''
   }
+
  /*  role: String, //Admin, Reader, Writer, Super */
 }, {
   timestamps: true

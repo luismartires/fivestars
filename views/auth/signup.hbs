@@ -1,18 +1,36 @@
-<h2>Signup</h2>
-<form action="/signup" method="POST">
-  <label>Username:</label>
-  <input type="text" name="username" required />
+<section class="index-section-box">
+  <div class="index-section-title-box">
+    <div class="signup-div-form-box">
 
-   <label>E-mail:</label>
-  <input type="email" name="email" required />
 
-  <label>Password:</label>
-  <input type="password" name="password" required />
-  <button type="submit">Sign in</button>
+      <div>
+        <h2 class="login-form-title">Create Account</h2>
+      </div>
 
-</form>
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
-{{/if}}
+      <div>
+        <form class="login-form-box" action="/signup" method="POST">
+          <label>Username</label>
+          <input type="text" name="username" autocomplete="off" required />
 
-<p>Don't have an account? Sign up <a href="/signup">here</a>!</p>
+          <label>E-mail</label>
+          <input type="email" name="email" autocomplete="off" required />
+
+          <label>Password</label>
+          <input type="password" name="password" required />
+
+          <div>
+            <button class="login-form-button" type="submit">Create</button>
+          </div>
+        </form>
+        {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+        {{/if}}
+      </div>
+
+      <div>
+        <p>Already have an account? Login <a href="/login">here</a>!</p>
+      </div>
+
+</section>
+</div>
+</div>
