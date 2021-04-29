@@ -35,7 +35,14 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  const { username, email, password, city= "-", imageUrl="https://res.cloudinary.com/dipcaihd5/image/upload/v1619625208/index/defaultuser_ywbnff.jpg", interests } = req.body;
+  const {
+    username,
+    email,
+    password,
+    city = "-",
+    imageUrl = "https://res.cloudinary.com/dipcaihd5/image/upload/v1619625208/index/defaultuser_ywbnff.jpg",
+    interests,
+  } = req.body;
   if (username === "" || password === "") {
     res.render("auth/signup", {
       errorMessage: "Indicate username and password",
@@ -66,25 +73,26 @@ router.post("/signup", async (req, res) => {
     password: hashedPassword,
     city,
     imageUrl,
-    interests
+    interests,
   });
   let transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: "Gmail",
     auth: {
-      user: '5tars.backendproject@gmail.com',
-      pass: '5tars2021'
-    }
+      user: "5tars.backendproject@gmail.com",
+      pass: "5tars2021",
+    },
   });
-  transporter.sendMail({
-    from: '"5tars Project " <5tars@project.com>',
-    to: email, 
-    subject: 'Login', 
-    text: 'Welcome to 5tars page, Enjoy!',
-    html: `<b>you registered, start rating!</b>`
-  })
-  .then(info => res.redirect('/'))
-  .catch(error => console.log(error));
-  res.redirect("/");//res.render('/', {user});
+  transporter
+    .sendMail({
+      from: '"5tars Project " <5tars@project.com>',
+      to: email,
+      subject: "Login",
+      text: "Welcome to 5tars page, Enjoy!",
+      html: `<b>you registered, start rating!</b>`,
+    })
+    .then((info) => res.redirect("/"))
+    .catch((error) => console.log(error));
+  res.redirect("/");
 });
 
 router.post("/logout", (req, res) => {
