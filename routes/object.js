@@ -14,6 +14,7 @@ const imdb = require("imdb-api");
 
 
 router.get("/object-search", async (req, res) => {
+  try{
   const { theObjectName } = req.query;
 
   const result = await imdb.search(
@@ -25,8 +26,9 @@ router.get("/object-search", async (req, res) => {
     }
   );
   let objects = result.results;
-
+console.log(result)
   res.render("object-search-results", { objects, theObjectName, user: req.session.currentUser });
+  }catch(e){res.render('error')}
 });
 
 
