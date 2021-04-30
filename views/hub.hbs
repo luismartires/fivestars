@@ -1,17 +1,41 @@
-<h1>Hub</h1>
-{{#each allShares}}
-<div>
-  <img src="{{user.imageUrl}}" alt="user img">
-  <h2>{{user.username}}</h2>
+<section class="hub-bg">
+  <div class="container search-result">
+    <h1>Hub</h1>
 
-</div>
-<h2>{{title}}</h2>
-<img src="{{poster}}" alt="poster img">
-<p>Rate: {{rating.rating}}</p>
-<p>{{user.interests}}</p>
-{{/each}}
+    <div class="hub-div-form-box-box">
+      <div class="row hub-div-form-box">
+        {{#each allShares}}
+        <div class="hub-div-form-user-box">
+
+          <div class="abc">
+            <div class="hub-div-form-user">
+              <img src="{{user.imageUrl}}" alt="user img">
+              <h2>{{user.username}}</h2>
+              {{!-- <div>
+                <p>{{user.interests}}</p>
+              </div> --}}
+            </div>
 
 
+
+            <div class="hub-div-form-poster-box">
+
+              <div class="hub-div-form-poster">
+                <img src="{{poster}}" alt="poster img">
+                <div class="hub-div-form-rating">
+                  <p>{{rating.rating}}</p>
+                  <img src="../images/star.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+
+      </div>
+    </div>
+  </div>
+</section>
 
 {{!-- <div class="search-result-image-overlay search-result-image-overlay--blur">
 

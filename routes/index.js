@@ -14,10 +14,16 @@ router.get("/", (req, res) => {
 
 /* HUB */
 
-router.get("/hub", async (req, res) => {
+ router.get("/hub", async (req, res) => {
   const allShares = await Hub.find().populate("user").populate("rating");
   res.render("hub", { allShares, user: req.session.currentUser });
-});
+}); 
+
+/* router.get("/hub", async (req, res) => {
+  const allShares = await Hub.find().populate("user").populate("rating");
+  const sortHub = allShares.sort((a, b) => b.date - a.date);
+  res.render("hub", { sortHub, user: req.session.currentUser });
+}); */
 
 router.post("/hub/:favoriteId", async (req, res) => {
   const user = await User.findById(req.session.currentUser._id);

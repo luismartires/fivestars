@@ -68,6 +68,7 @@ router.get("/details/:id", async (req, res) => {
 
 router.get("/favorites", async (req, res) => {
   const favorites = await Favorite.find({ user: req.session.currentUser._id });
+  console.log(favorites)
   const ratings = await Rating.find({ user: req.session.currentUser._id });
   let ratingsIds = ratings.map(rates => {
     return rates.objectId
@@ -108,6 +109,20 @@ router.post("/favorites/:id", async (req, res) => {
 /* ADD-REVIEW */
 
 router.get("/review/:id", async (req, res) => {
+  const result = await imdb.get(
+    {
+      id: req.params.id,
+    },
+    {
+      apiKey: process.env.CLIENT_ID,
+    }
+  );
+  const object = result;
+  console.log("in", object);
+  res.render("add-review", { object, user: req.session.currentUser });
+});
+
+router.get("/favorites/:id", async (req, res) => {
   const result = await imdb.get(
     {
       id: req.params.id,

@@ -4,7 +4,11 @@
   box-sizing: border-box;
 }
 
+
+
 /* NAVBAR */
+
+
 
 .navbar-logo-img {
   height: 4rem;
@@ -13,6 +17,7 @@
 }
 
 .nav-item-box-home {
+  border: 1px solid red;
   font-size: 2.5rem;
   font-family: Yanone Kaffeesatz;
   display: flex;
@@ -20,12 +25,17 @@
   justify-content: space-between;
 }
 
+.nav-item-home-hub-box {
+  display: flex;
+  width: 30rem;
+}
+
 .nav-item-box {
   font-size: 2.5rem;
   font-family: Yanone Kaffeesatz;
   display: flex;
   flex-direction: row;
-  width: 135rem;
+  width: 100rem;
   justify-content: flex-end;
   align-items: center;
 }
@@ -204,6 +214,7 @@
   border-radius: 2%;
   border: 0.1rem solid lightgrey;
   outline: none;
+  font-size: 2rem;
 }
 
 .main-div-form-btn {
@@ -211,9 +222,9 @@
   color: white;
   padding: 1rem;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 1rem;
-  border: 1px solid red;
+  border: 0.1rem solid red;
 }
 
 .main-div-form-btn:hover {
@@ -229,9 +240,9 @@
 }
 
 .search-result h1 {
-  color: #464646;
+  color: #5d5d5d;
   padding: 3rem 0;
-  border-bottom: 0.4rem solid #464646;
+  border-bottom: 0.4rem solid #5d5d5d;
   text-transform: uppercase;
   font-family: Yanone Kaffeesatz;
 }
@@ -288,27 +299,22 @@
 
 .search-result-image-title {
   color: white;
+  text-transform: uppercase; 
 }
 
 .search-result-image-details {
   margin-top: 2rem;
 }
 
-<<<<<<< HEAD
-.search-result-image-details a{
+.search-result-image-details a {
   font-size: 2rem;
   text-decoration: none;
   background-color: red;
-  padding: 1rem 1.5rem; 
-=======
-.search-result-image-details a {
-  text-decoration: none;
-  background-color: red;
-  padding: 0.4rem 0.5rem;
->>>>>>> df092d8c950a1826930d937f4508fc939b26a926
-  border-start-start-radius: 0.5rem;
-  border-end-end-radius: 0.5rem;
+  padding: 1rem 2rem;
+  border-start-start-radius: 1rem;
+  border-end-end-radius: 1rem;
   color: white;
+  outline: none;
 }
 
 .search-result-image-details a:hover {
@@ -351,16 +357,22 @@
   margin-right: 6.5rem;
 }
 
+.favorites-result-delete-fav-btn {
+  background-color: white;
+  padding: 0.6rem 0.9rem;
+  transition: 0.25s;
+  font-size: 2rem;
+  border: 0.1rem solid white;
+}
+
 .favorites-result-delete-fav {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: white;
-  padding: 1rem;
-  transition: 0.25s;
 }
 
-.favorites-result-delete-fav:hover {
+.favorites-result-delete-fav-btn:hover {
+  border: 0.1rem solid red;
   background-color: rgb(255, 50, 50);
   border-end-start-radius: 1rem;
   transition: 0.25s;
@@ -370,13 +382,50 @@
   height: 2rem;
   transform: rotate(45deg);
 }
-<<<<<<< HEAD
 
- 
-=======
->>>>>>> df092d8c950a1826930d937f4508fc939b26a926
+.favorites-rating-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+}
+
+.teste2 {
+  background-color: rgba(0, 0, 0, 0);
+border-radius: 4rem;
+border: 0.2rem solid rgba(0, 0, 0, 0);
+}
+
+.teste2 img {
+  background-color: red;
+  height: 4.4rem;
+  width: 5rem;
+  border-radius: 2rem;
+  border: 0.2rem solid red;
+}
+
+.favorites-rating {
+  padding-right: 0.4rem;
+  padding-top: 1.9rem;
+  font-size: 4rem;
+  color: white;
+  font-family: open sans;
+  font-weight: 700;
+}
+
+.favorites-rating-box img {
+  padding-top: 0.4rem;
+  height: 4.5rem;
+}
+
+
 
 /* FOOTER */
+
+  
+
 
 .footer-box {
   border-top: 0.4rem solid #222222;
@@ -688,7 +737,6 @@
   outline: none;
 }
 
-<<<<<<< HEAD
 
 
 /* OBJECT DETAILS */
@@ -934,6 +982,139 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
-=======
-/* JQUERY */
->>>>>>> df092d8c950a1826930d937f4508fc939b26a926
+
+
+
+/* HUB */
+
+
+
+.hub-bg {
+  background-color: black;
+}
+
+.hub-div-form-box {
+  background-color: black;
+  /* border: 1px solid blue; */
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 75rem;
+}
+
+.hub-div-form-user {
+/* border-right: 0.2rem solid black;
+border-left: 0.2rem solid black; */
+display: flex;
+flex-direction: column;
+margin-right: 6rem;
+align-items: center;
+justify-content: center;
+padding-right: 1.5rem;
+/* padding-right: 5rem;
+padding-left: 5rem; */
+}
+
+.hub-div-form-user img {
+  height: 10rem;
+  border-radius: 10rem;
+}
+
+ .hub-div-form-user h2{  
+  border-start-start-radius: 2rem;
+  border-end-end-radius: 2rem;
+  font-weight: 700;
+  font-size: 4rem;
+  color: white;
+  background-color: red;
+  padding: 0 2rem;
+  padding-top: 0.5rem;
+  transform: skewX(-15deg);
+  font-family: Yanone Kaffeesatz;
+} 
+
+.abc {
+  /* border: 1px solid violet; */
+  display: flex;
+  flex-direction: row;
+}
+
+.hub-div-form-user-box {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(250, 250, 250, 1);
+  border: 1px solid green;
+  padding: 3rem;
+  margin: 2rem;
+  margin-bottom: 4rem;
+}
+
+.hub-div-form-poster-box {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  
+  padding-right: 3rem;
+padding-left: 3rem;
+border-right: 0.1rem solid black;
+border-left: 0.1rem solid black; 
+}
+
+.hub-div-form-poster-box img {
+  height: 43rem;
+  width: 30rem;
+}
+
+.hub-div-form-poster {
+  position: relative;
+}
+
+.hub-div-form-poster p {
+  font-size: 4rem;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 2px 0 black,
+  1px 2px 0 black;
+}
+
+.hub-div-form-rating {
+  font-weight: 700;
+  font-family: Open Sans;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid red;
+  padding-left: 1.2rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0!important;
+  border-end-start-radius: 1rem;
+  background-color: rgba(250, 0, 0, 0.6);
+}
+ 
+.hub-div-form-rating img {
+  margin-top: 1.2rem;
+  height: 3rem;
+  width: 3rem;
+  margin-left: 0.5rem;
+} 
+
+/* .favorites-rating {
+  padding-right: 0.4rem;
+  padding-top: 1.9rem;
+  font-size: 4rem;
+  color: white;
+  font-family: open sans;
+  font-weight: 700;
+}
+ */
+
+ .hub-div-form-box-box {
+   display: flex;
+   justify-content: center;
+ }

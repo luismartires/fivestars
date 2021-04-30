@@ -16,28 +16,33 @@
 
             <div class="favorites-result-delete-fav">
               <form action="/favorites/{{id}}/delete" method="POST">
-                <button type="submit">X</button>
+                <button class="favorites-result-delete-fav-btn" type="submit"><img src="../images/add-favorite.png"
+                    alt=""></button>
               </form>
             </div>
 
             <div class="search-result-image-title">
               <h2>{{title}}</h2>
             </div>
-            <form action="/hub/{{id}}" method="POST">
-              <button type="submit">Share</button>
-              </form>
+
             <div class="search-result-image-details">
-          
+
               {{#contains ../ratingsIds objectId}}
               {{#each ../ratings}}
               {{#is objectId ../objectId}}
-              <p>Your rating: {{rating}}</p>
+              <div class="favorites-rating-box">
+                <p class="favorites-rating">{{rating}}</p>
+                <img src="../images/star.png" alt="">
+              </div>
               {{/is}}
               {{/each}}
               {{else}}
-              <a href="/review/{{imdbid}}">Add a rating</a>
+              <a href="/review/{{objectId}}">Add a rating</a>
               {{/contains}}
             </div>
+            <form action="/hub/{{id}}" method="POST">
+              <button class="teste2" type="submit"><img src="../images/share1.png" alt=""></button>
+            </form>
           </div>
         </div>
       </div>
