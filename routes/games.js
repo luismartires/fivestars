@@ -9,22 +9,31 @@ router.get("/games", async (req, res) => {
 
 router.get("/search-game", async (req, res) => {
   const { theObjectName } = req.query;
-
-  const result = await imdb.search(
-    {
-      name: theObjectName,
-    },
-    {
-      apiKey: process.env.CLIENT_ID,
-    }
-  );
-  let objects = result.results;
-  let filteredArr = objects.filter((result) => {
-    return result.type === "game";
-  });
-  console.log(filteredArr);
-
-  res.render("object-search-results", { objects: filteredArr, theObjectName, user: req.session.currentUser });
+  try {
+    const result = await imdb.search(
+      {
+        name: theObjectName,
+      },
+      {
+        apiKey: process.env.CLIENT_ID,
+      }
+    );
+    let objects = result.results;
+    let filteredArr = objects.filter((result) => {
+      return result.type === "game";
+    });
+    res.render("object-search-results", {
+      objects: filteredArr,
+      theObjectName,
+      user: req.session.currentUser,
+    });
+  } catch (e) {
+    res.render("object-search-results", {
+      objects: [],
+      theObjectName,
+      user: req.session.currentUser,
+    });
+  }
 });
 
 module.exports = router;

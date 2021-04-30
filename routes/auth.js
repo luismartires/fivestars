@@ -87,8 +87,8 @@ router.post("/signup", async (req, res) => {
       from: '"5tars Project " <5tars@project.com>',
       to: email,
       subject: "Login",
-      text: "Welcome to 5tars page, Enjoy!",
-      html: `<b>you registered, start rating!</b>`,
+      text: "Welcome to FiveStars - 1st Rate and Share Social Media Network",
+      html: `<b>Congratulations! Account sucessfully create, you may now explore your favorites games, movies and series. <br> Make sure to rate them and share it with your friends!  <br> Follow the link below to login into your account! <br> https://fivestars-project.herokuapp.com/login</b>`,
     })
     .then((info) => res.redirect("/"))
     .catch((error) => console.log(error));

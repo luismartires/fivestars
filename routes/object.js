@@ -38,11 +38,14 @@ router.post("/details/:id/rating", requireLogin, async (req, res) => {
     const user = req.session.currentUser._id;
     console.log(user);
     const rating = req.body.rating;
-    await Rating.create({
-      objectId,
-      rating,
-      user,
-    });
+    const existingRating = await Rating.findOne({ user: user, objectId: objectId});
+    if (!existingRating) {
+      await Rating.create({
+        objectId,
+        rating,
+        user,
+      });
+    }
     res.redirect(`/review/${objectId}`);
   } catch (e) {
     res.render("error");

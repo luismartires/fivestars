@@ -9,11 +9,22 @@
 
           <div class="abc">
             <div class="hub-div-form-user">
-              <img src="{{user.imageUrl}}" alt="user img">
-              <h2>{{user.username}}</h2>
-              {{!-- <div>
-                <p>{{user.interests}}</p>
-              </div> --}}
+              <div>
+                <img src="{{user.imageUrl}}" alt="user img">
+                <h2>{{user.username}}</h2>
+              </div>
+              <div class="search-result-image-overlay search-result-image-overlay--blur fit">
+                <div class="favorites-result-delete-fav">
+                </div>
+
+                <div class="luis">
+                  <p class="luis-title">City</p>
+                  <p class="luis-title-box">{{user.city}}</p>
+                  <p class="luis-title">Interests</p>
+                  <p class="luis-title-box">{{user.interests}}</p>
+                </div>
+              </div>
+
             </div>
 
 
