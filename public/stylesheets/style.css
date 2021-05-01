@@ -36,6 +36,13 @@
   justify-content: space-between;
 }
 
+.navbar-all-box {
+  width: 145rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .nav-item-home-hub-box {
   display: flex;
   width: 10rem;
@@ -46,10 +53,8 @@
   font-family: Yanone Kaffeesatz;
   display: flex;
   flex-direction: row;
-  width: 130rem;
   justify-content: flex-end;
   align-items: center;
-  padding-left: 15rem;
 }
 
 .nav-image-box {

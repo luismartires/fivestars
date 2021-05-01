@@ -19,7 +19,7 @@
 
 <body>
 
-  <nav class="navbar-expand-lg navbar-light bg-light navbar-box">
+  <nav class="navbar-expand-lg navbar-light bg-light navbar-box form-inline">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,46 +28,51 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <div class="navbar nav-item-box-home">
-            <div><img class="navbar-logo-img" src="/images/star.png" alt=""></div>
-            <div class="nav-item-home-hub-box">
-              <li class="nav-item">
-                <a class="nav-link mario" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/hub">Hub</a>
-              </li>
-            </div>
-            {{#if user}}
-            <div class="nav-item-box">
-              <li class="nav-item">
-                <a class="nav-link" href="/favorites" method="GET">My Favorites</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  <img class="nav-image-box" src="{{user.imageUrl}}" alt="" />
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li class="nav-item">
-                    <a class="dropdown-item" href="/my-area">My Area</a>
-                  </li>
-                  <li><a class="dropdown-item" href="/settings">Settings</a></li>
-                  <li>
-                    <form action="/logout" method="POST"><button class="dropdown-item" type="submit">Logout</button>
-                    </form>
-                  </li>
-                </ul>
-                {{else}}
-                <div class="nav-item-box">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  Account
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="/login">Sign In</a></li>
-                  <li><a class="dropdown-item" href="signup">Create Account</a></li>
-                </ul>
+
+            <div class="navbar-all-box">
+
+              <div class="nav-item-home-hub-box">
+                <div><img class="navbar-logo-img" src="/images/star.png" alt=""></div>
+                <li class="nav-item">
+                  <a class="nav-link mario" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/hub">Hub</a>
+                </li>
+              </div>
+              {{#if user}}
+              <div class="nav-item-box">
+                <li class="nav-item">
+                  <a class="nav-link" href="/favorites" method="GET">My Favorites</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="nav-image-box" src="{{user.imageUrl}}" alt="" />
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li class="nav-item">
+                      <a class="dropdown-item" href="/my-area">My Area</a>
+                    </li>
+                    <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                    <li>
+                      <form action="/logout" method="POST"><button class="dropdown-item" type="submit">Logout</button>
+                      </form>
+                    </li>
+                  </ul>
+                  {{else}}
+                  <div class="nav-item-box">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Account
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="/login">Sign In</a></li>
+                    <li><a class="dropdown-item" href="signup">Create Account</a></li>
+                  </ul>
+              </div>
+
             </div>
           </div>
           {{/if}}
